@@ -7,6 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_DataTypes", "CS_DataType
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DE45DE98-635A-4E67-B58D-369A920B52D8}"
 	ProjectSection(SolutionItems) = preProject
+		Assignments.md = Assignments.md
 		readme.md = readme.md
 	EndProjectSection
 EndProject

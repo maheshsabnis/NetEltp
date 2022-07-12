@@ -55,3 +55,23 @@ Date			datetime		System.DataTime	10 mm/dd/yyyy, UTC Support
 					- using System;
 
 	- Programming Constructs
+		- Operators
+			- +,-,*,/
+				- The '+' is by default overloaded for 'String Concatenation' if both operands are string
+					- if a and b are string
+						- a + b, it will be concatenation	
+			- ++, --, +=,-=
+			- >,<,>=, <=, !=, ==
+			- ! (nor or not), || (or), && (and)
+			- Using Template string or String Interpolation
+				- New syntax for String Conctenation
+				- e.g.
+					- string fname="James";
+					- string lname ="Bond";
+					- Older way
+						- "The Name is " + fname +  lname +
+					- Newer Way
+						- $"The Name is {fname} {lname}"
+							- The Name is James Bond
+
+			
