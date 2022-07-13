@@ -32,6 +32,10 @@ for (int k = 0; k < arrayList.Count; k++)
 }
 
 
+Stack stack =   new Stack();
+
+SortedList list = new SortedList();
+
 
 Console.ReadLine();
 

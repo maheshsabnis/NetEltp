@@ -99,10 +99,14 @@ Date			datetime		System.DataTime	10 mm/dd/yyyy, UTC Support
 	- SIngle File Publish
 		- Compile and Build the Entire Project into a Single Exe for the Platform
 # Programming
-
-1. Collection Framework
+1. Foundation of C# for Value ad Reference Types
+	- ref, out, params
+		- ref: Pass the Reference, while passing reference of vaiable, the initial value for the variable MUST be present
+		- out: PAss the reference, same as 'ref' but not initial value is required
+		- params: Pass variable number of parameters
+2. Collection Framework
 	- Collection Classes
-		- .NET Frwk 1.0 to 4.x (Alseo i .NET Core)
+		- .NET Frwk 1.0 to 4.x (Alseo in .NET Core)
 		- Each ENrty in Colletion is Object
 		- System.Collections Namespace
 			- ArrayList, Stack, LinkedList, Queue, etc.
@@ -112,6 +116,16 @@ Date			datetime		System.DataTime	10 mm/dd/yyyy, UTC Support
 			.NET Frwk 4.x + and in .NET Core
 		- Typesafe Data STructures having Binary Reusability of Data
 			- USe 'T'
+		- Generic Types
+			- Class, Interface, Methods, Variable, Parameter, Event, Delegate
+		- Class<T>
+			- WHere T is .NET Type (Standard and Custom)
+			- E.g.
+				- T can int, string, bool, objet
+				- Custom Classes e.g. Employee
+		- Multi-Type Generic Classes
+			- Class<K,V>
+				- For Creation of Key,Value Pair or Dictionary type of data
 	- Reading Data from Collection Type
 		- for..loop
 		- foreach..loop
