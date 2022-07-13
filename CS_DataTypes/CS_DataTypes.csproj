@@ -5,6 +5,12 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+	  <!--Publish a Single Exe-->
+	  <PublishSingleFile>true</PublishSingleFile>
+	  <!---The Target Platform where the Exe will be executed-->
+	  <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+	  <!--Trim the Exe SIze with only Mandatory References-->
+	  <PublishTrimmed>true</PublishTrimmed>
   </PropertyGroup>
 
 </Project>

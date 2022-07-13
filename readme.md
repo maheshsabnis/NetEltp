@@ -73,5 +73,55 @@ Date			datetime		System.DataTime	10 mm/dd/yyyy, UTC Support
 					- Newer Way
 						- $"The Name is {fname} {lname}"
 							- The Name is James Bond
+- Common Language Specifications (CLS)
+	- Rules
+		- Evaluate LHS = RHS
+- CTS
+	- Data Types
+	- Value Types
+	- Reference Types
+		- Object
+		- System.Type
+			- Type, the highest level type class that define structure for every data type
+- BCL or FCL
+	- STandard Set of .NET CLasses grouped under their NAmespaces
+		- Nmespaces under Assemblies
+			- Assembly is a Compiled Output of each .NET App
+				- .exe or .dll
+			- Each Assembly is NAmespace and it contains set of classes in it
+				- EAch .NET Project is assembly by itself
+		- System.dll
+			- System.Data.dll
+			- System.IO.dll
+		- Microsoft.NetCore.App (The BCL for .NET COre Apps)
+			- .NET 5,6, FRamework with its assemblies in it
+- Common Language Runtime
+	- SIngle File Publish
+		- Compile and Build the Entire Project into a Single Exe for the Platform
+# Programming
+
+1. Collection Framework
+	- Collection Classes
+		- .NET Frwk 1.0 to 4.x (Alseo i .NET Core)
+		- Each ENrty in Colletion is Object
+		- System.Collections Namespace
+			- ArrayList, Stack, LinkedList, Queue, etc.
+	- Generic Classes
+		- .NET Frwk 2+
+		- Concurrent Classes
+			.NET Frwk 4.x + and in .NET Core
+		- Typesafe Data STructures having Binary Reusability of Data
+			- USe 'T'
+	- Reading Data from Collection Type
+		- for..loop
+		- foreach..loop
+		- while..loop
+		- do..while loop
+
+3. OOPs
+4. File IO
+5. Database Programming
+	- SQL Server
+	- ORM
 
 			

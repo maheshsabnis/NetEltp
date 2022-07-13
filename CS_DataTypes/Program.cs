@@ -12,4 +12,6 @@ z = x + y;
 
 Console.WriteLine($"The Result is {z}");
 
+Console.ReadLine(); 
+ 
 
