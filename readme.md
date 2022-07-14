@@ -100,6 +100,29 @@ Date			datetime		System.DataTime	10 mm/dd/yyyy, UTC Support
 		- Compile and Build the Entire Project into a Single Exe for the Platform
 # Programming
 1. Foundation of C# for Value ad Reference Types
+	- Methods
+		- Repetative Statements put inside a named block which will be accessible whenever and whereever it is needed
+			- Method which does not return anything
+				- One-Way Method
+			- Methods with retutrn Value
+				- Two-Way Method
+		- Method my or may not have input parameters aka arguments aka Formal Parameters	
+	- integer * interger is integer
+	- integer / integer is integer
+		- For Logically Accurate Result Try one of the following
+			- Either Type-Cast the Result
+				- This will not work for Result Coversion, recommended to avoid it
+				- Instead Try to Type-Cast the Data Type of Operand
+
+			- Or Change the datatype from integer to more size data type as per the requirements
+		- Use of 'var'
+			- Introduced in C# 3.0 on .NET Frwk 3.5 to make sure that the result of expressions are stored w/o any type-casting
+				- Use this in case where we cannot predict the result from the expression
+				- The Compiler will evaluate the expression and set the type of 'var' to the actual data type of the resultant
+			- The 'var' is only available within the method scope
+			- The 'var' declaration MUST be initialized
+			- The 'var' cannot bt input and output parameter to a method
+			- Once the compiler set the data type for 'var' it cannot be changed
 	- ref, out, params
 		- ref: Pass the Reference, while passing reference of vaiable, the initial value for the variable MUST be present
 		- out: PAss the reference, same as 'ref' but not initial value is required
