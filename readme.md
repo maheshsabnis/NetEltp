@@ -133,7 +133,36 @@ Date			datetime		System.DataTime	10 mm/dd/yyyy, UTC Support
 		- Each ENrty in Colletion is Object
 		- System.Collections Namespace
 			- ArrayList, Stack, LinkedList, Queue, etc.
+	- The Array class
+		- reference Type
+		- System.Array
+			- When we declare an array of any type, it by default is an instance of array class
+			- Use 'new' to instantiate it
+			- The identitifer for array is an instance of array class and hence it has access to all non-static array methods
+			- e.g.
+				- int[] arr = new int[5];
+					- the 'arr' is an identifier which is an instance of 'Array' class
+			- Can store data of 'Same-Type' in fix size length
+		- Enumerations
+			- Start Reading from the first record (aka 0th index) and conytinue search and read next record till end-of-collection is not reached.
+				- MoveNext() and Current
+					- Current is a record which is fetched while enumerating (reading) and MoveNext() will check if there is next record presewnt or exist into the collection 
+	- WHile using collection use loops for reading/writing data from and to the collection	
+		- for..loop
+		- foreach..loop
+			- Uses Enumeration internally
+		- while..lopp
+		- do..while loop
+	- Collections
+		- Ready-to-Use Data Structures for managing large amount of data in Application's memory
+		- Each entry in collection is 'object'
+			- Each value is converted into object (Box) and while extracting it is Unboxed to its original Data Type
+		- Collections does not have any max limit to store data init like array
+		- Primtive as well as custom types (User defined) classes can be added into the Collection
 	- Generic Classes
+		- Type-Safe Approach for stroing data in the form of Data Structure
+			- Use the 'T' as Template for Single-Type Generic
+			- For Complex Key:Value pair data structures use  K:V a multi-type generic
 		- .NET Frwk 2+
 		- Concurrent Classes
 			.NET Frwk 4.x + and in .NET Core
@@ -149,6 +178,12 @@ Date			datetime		System.DataTime	10 mm/dd/yyyy, UTC Support
 		- Multi-Type Generic Classes
 			- Class<K,V>
 				- For Creation of Key,Value Pair or Dictionary type of data
+		- System.Collections.Generic with all classes as Enumerable 
+			- List<T>, Stakc<T>, Queue<T>, LinkedList<T>
+				- T can be primitype or custom type
+				- No Type-Casting is needed for storing and extracting data from it 
+			- HashSet<K,V>, KeyValuePair<K,V>, Dictionary<K,V>
+
 	- Reading Data from Collection Type
 		- for..loop
 		- foreach..loop

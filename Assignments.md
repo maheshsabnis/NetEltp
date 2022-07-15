@@ -32,3 +32,20 @@ String class
 Char class
 	- Chat.IsUpper()
 
+# 15-July-2022
+Implement the following problem statments using Switch-Case in do..while loop
+1. Create an Array of Strings and Sort and reverse the array based on Length of each string from array
+2. Create an Array of integers and print index of even and odd number from the array
+3. Create an Array of integers and print an index of prime numbers from the array
+4. Create an Array of Strings and print only those strings that contains 'a' in it at any position in that string
+5. Create an Array of Strings and print only those strings that starts from 'A' or 'M', or 'K' from the array
+6. Create an Array of Strings and Find out count of repeated strings in an array and print them on console
+	- e.g.
+		- The 'Mahesh' appears 4 times in array
+7. Reapeat the same problem statement 6 for integer arrays 
+8. Repeate Tassks from 1 to 7 by using List of string and List of integeres 
+9. Explore Following
+	- C# Coding Practices
+	- Take an experience of Single-File Publish in .NET Core
+	- Read about KeyValuePair K,V class, HashSet class, and Dictionary 
+		- https://www.dotnetcurry.com/csharp/1362/hashset-csharp-with-examples
