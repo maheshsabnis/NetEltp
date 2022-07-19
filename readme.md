@@ -191,6 +191,44 @@ Date			datetime		System.DataTime	10 mm/dd/yyyy, UTC Support
 		- do..while loop
 
 3. OOPs
+
+- Access Specifiers
+	- private, public, protected
+		- Private : Scope (accessible) only in the declaring class
+		- proteted: Scope to declaring class and its derived class
+		- public: scropt to entire app
+	- internal
+		- Scope to all classes in the declaring namespace
+		- e.g.
+			namespace n1 {  class C { internal x;} class A{  ths can access objc.x }  }
+	- proteted internal
+		- COmbinition of protected and internal
+			- Scope with the namespace and in derived class of other namespace
+- Contents of class
+	- Data Members
+		- With any access specifier as per the requirements
+	- Member Functions aka Methods
+		- With any access specifier as per the requirements
+		- But to expose them use 'public'
+	- Properties aka Fields
+		- They are REad/Write methods on a private data memebr
+		- get: to REad data for Private member
+		- set: to write data to private member. THis can also cotains a logic for Private member validation
+		- Syntax 1: [Access Specifier] [PROPERTY-NAME] {get;set;}  form C# 3.0+
+		- SYntax 2:
+			- [Access-Specifier] [PROPERTY-NAME]    Evergreen Syntax
+			{
+			    get { return PRIVATE_MEMBER}
+				set {
+				   ..... SOME LOGIC HERE
+				   PRIVATE_MEMBER = value;
+				}
+			}
+	- Class Instance Streregies
+		- USe 'new'
+		- The default ctor will be invoked
+		- We can have Mutiple ctors in class
+
 4. File IO
 5. Database Programming
 	- SQL Server

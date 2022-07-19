@@ -47,5 +47,17 @@ Implement the following problem statments using Switch-Case in do..while loop
 9. Explore Following
 	- C# Coding Practices
 	- Take an experience of Single-File Publish in .NET Core
-	- Read about KeyValuePair K,V class, HashSet class, and Dictionary 
-		- https://www.dotnetcurry.com/csharp/1362/hashset-csharp-with-examples
+	- Read about KeyValuePair K,V class, HashSet class, and Dictionary .
+		- https://www.dotnetcurry.com/csharp/1362/hashset-csharp-with-examples4
+
+# Date:19-July-2022
+
+1. Modify the Staff class with following Logic for validating Properties
+	- StaffId shoud not be -Ve
+	- StaffName must not have special Characters
+	- DeptName, MUST be one of the following
+		- Cancer, Heart, Pathology, Radiology, Bloob Bank, Organs, Orthopeic, Eye, Dental
+	- StaffCategory, MUST be one of the following
+		- Doctor, Nurse, Wardnboy, Brother, Technician
+	- ALl String values are mandatory
+2. USe Switch Case for all CRUD Operations
