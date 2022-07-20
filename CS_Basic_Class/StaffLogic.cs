@@ -43,7 +43,13 @@ namespace CS_Basic_Class
                     {
                         // Update
                         item.StaffName = staff.StaffName;
-                        // BAKI YOUR HEADACHE
+                        item.Email = staff.Email;
+                        item.DeptName = staff.DeptName;
+                        item.StaffCategory = staff.StaffCategory;
+                        item.ContatNo = staff.ContatNo;
+                        item.Education = staff.Education;
+                        item.DateOfBirth = staff.DateOfBirth;
+                        item.Gender = staff.Gender;
                         break;
                     }
                 }

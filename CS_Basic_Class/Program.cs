@@ -20,7 +20,7 @@ Console.WriteLine($"{staff.StaffId} {staff.StaffName} {staff.DeptName}");
 
 staff = new Staff() 
 {
-    StaffId = 3,
+    StaffId = 1,
     StaffName = "AMar",
     Email = "amar@myhosp.com",
     DeptName = "Pathology",
@@ -31,7 +31,7 @@ staff = new Staff()
     ContatNo = 77474996
 };
 
-staffs =  logic.RegisterNewStaff(staff);
+staffs =  logic.UpdateStaffInfo(1,staff);
 
 foreach (var s in staffs)
 {
