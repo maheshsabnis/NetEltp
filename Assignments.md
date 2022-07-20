@@ -61,3 +61,23 @@ Implement the following problem statments using Switch-Case in do..while loop
 		- Doctor, Nurse, Wardnboy, Brother, Technician
 	- ALl String values are mandatory
 2. USe Switch Case for all CRUD Operations
+
+# Date:20-July-2022 
+
+1. Create a Staff Class with Following Properties
+	 public int StaffId { get; set; }
+        public string StaffName { get; set; } = String.Empty;
+        public string Email { get; set; } = String.Empty;
+        public int ContactNo { get; set; }
+        public string? Education { get; set; }
+        public int ShiftStartTime { get; set; }
+        public int ShiftEndTime { get; set; }
+        public int BasicPay { get; set; }
+2. Create Doctor, Technician, Nurse classes derived from the Staff Class with their respective properties (YOU PLAN and THINK OF PROPERTIES)
+3. Create DoctorLogic, TechnicianLogic, NurseLogic classes for performing CRUD OPerations in Memory using the Dictionary Collection.
+4. Perform the following operations
+	- List all Doctors of Specific 'Specialization' e.g. MBBS
+	- Calculate Income for Each Staff and show it when the StaffId is entered to get details
+	- Search Doctor / Nurse / Technician based using Name
+		- If Names are same then return mutiple records
+
