@@ -229,6 +229,8 @@ Date			datetime		System.DataTime	10 mm/dd/yyyy, UTC Support
 		- The default ctor will be invoked
 		- We can have Mutiple ctors in class
 
+	- abstract, virtual are access modifiers
+
 4. File IO
 5. Database Programming
 	- SQL Server
