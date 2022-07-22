@@ -87,7 +87,7 @@ Implement the following problem statments using Switch-Case in do..while loop
 1. Modify an assignment of 20-July-2022 by adding A StafLogic abstract class with following methods
 		- GetGroddIncome()
 		- GetTax()
-		- GetNetIncome()
+		- GetNetIncome()   
 Also add an Accountant class. THis class MUST have following method
 	- GetIncome(StaffLogic staff)
 		- The ABove method should return an income of any staff (Doctr,Nurse, Technician, Driver, etc) based on the Is-a relaionship of the StaffLogic class

@@ -97,27 +97,160 @@ Done
 13-July-2022
 String Operations
 
+15-July-2022
+Avoid Hard Coding
+
+19-July-2022
+Excellent Implementation with Innovation
+
+=============================================================================================
+
+
+Rishika Arya
+
+12-JUly-2022
+Modification for Data Type for POwer MUST be done
+
+13-July-2022
+String OPerations
+
+15-July-2022
+Array and List Operations
+
+19-July-2022
+MOdifications are needed
+
+=============================================================================================
+Santosh Rathod
+12-July-2022
+Completed, Nice implemented LOgic
+13-July-2002
+String OPerations are completed
+15-JUly-2022
+Completed with Nicely defined LOgic
+19-JUly-2022
+
+MOdifiction in Udate
 
 
 
+=============================================================================================
 
 
+Mukund Wagh
+12-July-2022
 
+Nicely defined logic, COmpleted, the type conversion must be added
 
+13-July-2022
+String OPerations
+Completed
 
+15-July-2022
+USng Arrays List
+Search Logic is implemented but the Original data is been modified, mUST try other way of sorting
 
+19-July-2022
+OOPs
+COmpleted, Modify messages
 
+==========================================================================================
+Ayush Naphade (Average logically)
+12-July-2022
+BAsic Calculation, MOdify the the Squareroot for Accurate results
+13-July-2022
+String Operations
+Completed
+15-july
+Repetation of string in array logic can be changed from sort(). Rest all are completed
+19-july
+Not Comleted
 
+==========================================================================================
+Abhiskel Goyal (Average)
 
+12-July-2022
 
+Completed by checking the data type
 
+13-july
 
+Nice logic written
 
+15-july
+Not complete the repetation
 
+19-JUly
+Completed, SHow data in Tabluar form in COnsole
 
+============================================================================================
+SHubhankar Dash
+12-July
+Completed
 
+13-July
 
+String OPerations Completed, Noce approach for the programming
 
+15-JUly
+
+STring OPerations are completed
+
+19-July
+
+OOPs Completed
+
+============================================================================================
+Divyanshi Jain (Good Logic)
+
+12-JUly
+COmpleted
+13-July
+String OPerations
+15-July
+Completed Nice implementation
+19-July
+Nicde UI, Completed
+
+============================================================================================
+Prathamesh Londhe
+
+12-July
+
+Completed
+
+13-July
+
+String OPerations
+
+15-July
+
+Will be doing using HashSet
+
+19-July
+
+OOPs, COmpleted
+==============================================================================================
+
+Pavan Vasa
+
+12-July
+
+Completed
+
+13-July
+
+Count of Special Characters
+
+15-July
+
+Great Logic for Repetation
+
+19-July
+
+Great Implementation
+
+=============================================================================================
 
 
 
