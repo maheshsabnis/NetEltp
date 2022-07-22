@@ -252,9 +252,21 @@ Great Implementation
 
 =============================================================================================
 
+Divyansh Pal
 
+12-July
 
+COmpleted
 
+13-July
+STring OPerations COmpleted with Nice Logic
+
+15-July
+List and ARrays
+COmpleted Small changes are needed for Repetation
+
+19-July
+COmpleted
 
 
 

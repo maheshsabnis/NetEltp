@@ -76,6 +76,8 @@ Implement the following problem statments using Switch-Case in do..while loop
 2. Create Doctor, Technician, Nurse classes derived from the Staff Class with their respective properties (YOU PLAN and THINK OF PROPERTIES)
 3. Create DoctorLogic, TechnicianLogic, NurseLogic classes for performing CRUD OPerations in Memory using the Dictionary Collection.
 4. Perform the following operations
+
+
 	- List all Doctors of Specific 'Specialization' e.g. MBBS
 	- Calculate Income for Each Staff and show it when the StaffId is entered to get details
 	- Search Doctor / Nurse / Technician based using Name
