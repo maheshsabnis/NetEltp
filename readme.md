@@ -231,6 +231,11 @@ Date			datetime		System.DataTime	10 mm/dd/yyyy, UTC Support
 
 	- abstract, virtual are access modifiers
 
+	- Sealed Class
+		- Keyword is 'sealed'
+		- Cannot be extended (aka inherited)
+
+
 4. File IO
 5. Database Programming
 	- SQL Server
