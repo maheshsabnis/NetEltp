@@ -93,3 +93,25 @@ Implement the following problem statments using Switch-Case in do..while loop
 Also add an Accountant class. THis class MUST have following method
 	- GetIncome(StaffLogic staff)
 		- The ABove method should return an income of any staff (Doctr,Nurse, Technician, Driver, etc) based on the Is-a relaionship of the StaffLogic class
+
+# Date: 27-July-2022
+
+1. Make sure that, when the New Staff is Added/Updated/Deleted the Norification is generated to the Main() method
+2. Modify the APplication of date 26-July-2022 by adding Logic for Calculating Salary for each Staff. Display UI as Below
+
+NAme:				Staff Id:				StaffType: 
+=================================================================
+Income Details	
+=================================================================
+BAsic Pay
+(Othe Details According to Staff Type)
+
+=================================================================
+Gross Income: In Words and Digits
+=================================================================
+Hospital Share: In Words and Digits
+=================================================================
+Tax Paid: In WOrds and Digits
+=================================================================
+Net Income: In Words and Digits
+=================================================================
