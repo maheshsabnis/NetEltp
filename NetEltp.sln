@@ -8,6 +8,15 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DE45DE98-635A-4E67-B58D-369A920B52D8}"
 	ProjectSection(SolutionItems) = preProject
 		Assignments.md = Assignments.md
+		..\..\Users\acer\OneDrive\New_Lab_Documents\CSharp\csharp 4.0 specification.doc = ..\..\Users\acer\OneDrive\New_Lab_Documents\CSharp\csharp 4.0 specification.doc
+		..\..\Users\acer\OneDrive\New_Lab_Documents\CSharp\CS_Appls.pdf = ..\..\Users\acer\OneDrive\New_Lab_Documents\CSharp\CS_Appls.pdf
+		..\..\Users\acer\OneDrive\New_Lab_Documents\CSharp\CS_Async_Delegate.pdf = ..\..\Users\acer\OneDrive\New_Lab_Documents\CSharp\CS_Async_Delegate.pdf
+		..\..\Users\acer\OneDrive\New_Lab_Documents\CSharp\CS_File_Handling.pdf = ..\..\Users\acer\OneDrive\New_Lab_Documents\CSharp\CS_File_Handling.pdf
+		..\..\Users\acer\OneDrive\New_Lab_Documents\CSharp\CS_Working_With_Reflection.pdf = ..\..\Users\acer\OneDrive\New_Lab_Documents\CSharp\CS_Working_With_Reflection.pdf
+		..\..\Users\acer\OneDrive\New_Lab_Documents\CSharp\CS_Working_With_Streams.pdf = ..\..\Users\acer\OneDrive\New_Lab_Documents\CSharp\CS_Working_With_Streams.pdf
+		..\..\Users\acer\OneDrive\New_Lab_Documents\CSharp\Generics_Lab.pdf = ..\..\Users\acer\OneDrive\New_Lab_Documents\CSharp\Generics_Lab.pdf
+		..\..\Users\acer\OneDrive\New_Lab_Documents\CSharp\LINQ_HOL.pdf = ..\..\Users\acer\OneDrive\New_Lab_Documents\CSharp\LINQ_HOL.pdf
+		..\..\Users\acer\OneDrive\New_Lab_Documents\CSharp\LINQ_TO_SQL.pdf = ..\..\Users\acer\OneDrive\New_Lab_Documents\CSharp\LINQ_TO_SQL.pdf
 		readme.md = readme.md
 	EndProjectSection
 EndProject
@@ -55,17 +64,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_UsingStatic", "CS_UsingS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_Sealed", "CS_Sealed\CS_Sealed.csproj", "{D7D39853-07B9-4DC7-B276-4AFAC2FC4232}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_Simple_Interface", "CS_Simple_Interface\CS_Simple_Interface.csproj", "{F7A81852-A714-4ADF-B01D-9C56CDCA161F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_Simple_Interface", "CS_Simple_Interface\CS_Simple_Interface.csproj", "{F7A81852-A714-4ADF-B01D-9C56CDCA161F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_Multiple_INterfaces", "CS_Multiple_INterfaces\CS_Multiple_INterfaces.csproj", "{EB48021D-1B99-4A6C-B27E-FC8D4E5FC9BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_Multiple_INterfaces", "CS_Multiple_INterfaces\CS_Multiple_INterfaces.csproj", "{EB48021D-1B99-4A6C-B27E-FC8D4E5FC9BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_Dynamic_Interface", "CS_Dynamic_Interface\CS_Dynamic_Interface.csproj", "{18D5414B-B4F4-49E2-9479-80FAB8D72D8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_Dynamic_Interface", "CS_Dynamic_Interface\CS_Dynamic_Interface.csproj", "{18D5414B-B4F4-49E2-9479-80FAB8D72D8F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GenericsDemo", "GenericsDemo", "{F7EDE4A9-5230-4E32-8679-3874E32751BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_Generic", "CS_Generic\CS_Generic.csproj", "{EEDA53BF-05CC-4526-B431-0A378627FCBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_Generic", "CS_Generic\CS_Generic.csproj", "{EEDA53BF-05CC-4526-B431-0A378627FCBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_Gen_App", "CS_Gen_App\CS_Gen_App.csproj", "{C3A86ABB-87FC-4687-B6AC-50532D04C8B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_Gen_App", "CS_Gen_App\CS_Gen_App.csproj", "{C3A86ABB-87FC-4687-B6AC-50532D04C8B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_Delegate", "CS_Delegate\CS_Delegate.csproj", "{B0974EC3-5706-406C-925E-4A5069701C91}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -169,6 +180,10 @@ Global
 		{C3A86ABB-87FC-4687-B6AC-50532D04C8B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3A86ABB-87FC-4687-B6AC-50532D04C8B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3A86ABB-87FC-4687-B6AC-50532D04C8B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0974EC3-5706-406C-925E-4A5069701C91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0974EC3-5706-406C-925E-4A5069701C91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0974EC3-5706-406C-925E-4A5069701C91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0974EC3-5706-406C-925E-4A5069701C91}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -197,6 +212,7 @@ Global
 		{18D5414B-B4F4-49E2-9479-80FAB8D72D8F} = {A3360FC9-F7B9-4A16-A536-E7D16D637DA7}
 		{EEDA53BF-05CC-4526-B431-0A378627FCBC} = {F7EDE4A9-5230-4E32-8679-3874E32751BC}
 		{C3A86ABB-87FC-4687-B6AC-50532D04C8B7} = {F7EDE4A9-5230-4E32-8679-3874E32751BC}
+		{B0974EC3-5706-406C-925E-4A5069701C91} = {235A13E5-114B-4F34-9428-27AB20AC89FA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DC8229FF-A928-47D7-A51A-844D103A760F}
