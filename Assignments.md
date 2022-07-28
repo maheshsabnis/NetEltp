@@ -115,3 +115,6 @@ Tax Paid: In WOrds and Digits
 =================================================================
 Net Income: In Words and Digits
 =================================================================
+
+# Date :28-July-2022
+1. MOdify the class fr STring Operations on 13-July-2022 using extenion methos for 'STring' class

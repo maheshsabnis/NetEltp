@@ -243,6 +243,30 @@ Date			datetime		System.DataTime	10 mm/dd/yyyy, UTC Support
 		- Event
 	- Generic COntsraints
 		- Restrict the T parameter to use a specific TYpe and its Derived Types for Instance creation
+	- Extension Methods
+		- The class tat defines etension method MUST be 'static'
+		- This class will declare the method which is to be used as 'extension' as 'static'
+		- THis method will accept the 'first parameter as "this" refered reference of the class (or interface)' for which the current method will be used as 'extension method'
+		- e.g.
+			- The class MyCLass
+```` csharp
+	public interface IClass {}
+    public  class MyClass:IClass {}
+	public class MyDerivedClass : MyClass {}
+````
+
+		    - The Extension Method class
+
+```` csharp
+     public static class MyExtensions 
+	 {
+	     public static void ExtMethod(this ICLass obj)
+		 {
+		 }
+	 }
+````
+
+
 4. File IO
 5. Database Programming
 	- SQL Server
