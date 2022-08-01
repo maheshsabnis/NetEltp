@@ -118,3 +118,16 @@ Net Income: In Words and Digits
 
 # Date :28-July-2022
 1. MOdify the class fr STring Operations on 13-July-2022 using extenion methos for 'STring' class
+
+@ Date:01-Aug-2022
+
+1. Create a Collection of EMployees and Departments
+	- Department: DeptNo,DeptNAme, Capacity, Location
+		- Departments COllection: Min 20 Records
+	- Employee: EmpNo, EmpName, Designation, Salary, DEptNo
+		- Departments: MIn 50 Records
+2. Print Maximum Salary Per Department with EMpNo and EmpName
+3. Print Sum of Salary Group by DeptName 
+4. Print Employee Details Per DEptName
+5. Print Count of Employees working per Location 
+6. Print EMployees details working Per Location

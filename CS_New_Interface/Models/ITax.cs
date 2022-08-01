@@ -9,5 +9,6 @@ namespace CS_New_Interface.Models
     public interface ITax
     {
         decimal CalculateTax(decimal taxableAmount);
+
     }
 }

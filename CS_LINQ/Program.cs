@@ -31,9 +31,9 @@ var FInalResult = employees.Where(emp => emp.DeptName == "IT").OrderBy(emp => em
 
 // USing the LINQ Query Approach
 
-var empByDeptName = from emp in employees
-                    where emp.DeptName == "IT"
-                    select emp;
+var empByDeptName = from emp in employees // Get The Data SOurce
+                    where emp.DeptName == "IT" // Expression Generator to Evluate Data SOurce
+                    select emp; // REsult Store
 
 Print(empByDeptName);
 Console.WriteLine();

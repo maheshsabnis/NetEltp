@@ -266,6 +266,22 @@ Date			datetime		System.DataTime	10 mm/dd/yyyy, UTC Support
 	 }
 ````
 
+	- Language INtegrated Queries (LINQ)
+		- Methods (Mostly Extension Methods)
+			- OrderBy, OrderByDescending
+			- Join
+			- GroupBy
+			- Set OPerators
+				- Take
+				- Skip
+				- INtersect
+				- Union
+				- All
+				- Any
+			- Sum, Min, Max, Average
+			- First, FirstOrDefault
+			- Last, LastOrDefault
+		- AsParallel
 
 4. File IO
 5. Database Programming
