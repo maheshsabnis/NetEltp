@@ -10,7 +10,5 @@ Console.WriteLine($"Reverse of {str} = {op.ReverseString(str)}");
 
 string MyString = "I am Wrath";
 Console.WriteLine($"Reverse of {MyString} = {MyString.ReverseExt()}");
-List<string> list = new List<string>();
-list.Concat();
-
+ 
 Console.ReadLine();
