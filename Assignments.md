@@ -119,7 +119,7 @@ Net Income: In Words and Digits
 # Date :28-July-2022
 1. MOdify the class fr STring Operations on 13-July-2022 using extenion methos for 'STring' class
 
-@ Date:01-Aug-2022
+# Date:01-Aug-2022
 
 1. Create a Collection of EMployees and Departments
 	- Department: DeptNo,DeptNAme, Capacity, Location
@@ -131,3 +131,21 @@ Net Income: In Words and Digits
 4. Print Employee Details Per DEptName
 5. Print Count of Employees working per Location 
 6. Print EMployees details working Per Location
+
+# Date 03-Aug-2022
+
+1. (On SPOT) MOdify the CS_FirstFile Project with File Operation class with following required methods
+	- MAke sure that all Methods should first Check an extension as '.txt' else the error Must be thrown
+		- HINT: String.substr('.')
+	- The CReate Method MUST accept 2 paraeters
+		- Parameter 1: Directory
+		- Parameter 2: File
+	- Read/Wite/Append Methods MUST accept 3 paraeters
+		- Parameter 1: Directory
+		- Parameter 2: FileName
+		- Parameter 3: the Data
+			- For Read the 3rd parameter MUST be out
+	- Move the file to Other Folder
+	- ENcrypt and DEcryp the File
+	- Delete The File (MUST be the last Operation)
+2. Create Salary Slip for each Staff (Modify 27-July-2022 Project)

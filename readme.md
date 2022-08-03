@@ -284,7 +284,46 @@ Date			datetime		System.DataTime	10 mm/dd/yyyy, UTC Support
 		- AsParallel
 
 4. File IO
-5. Database Programming
+	- MAke sure that while using IOs use Exception Management
+		- System.Exception
+			- The Highes Leve Exception Class
+			- Properties
+				- Message: Provide An Exception Thrown by the code
+				- InnerException: Errors in detail
+		- Blocks
+			- try {... CODE TO EXECUTE ...} catch(Exception ex){...AN EXCEPTION THROWN}finally {MANDATOY EXECUTABLE CODE}
+			- FActs
+				- one try can have multiple-Catch
+					- catch(Specific Exception 1){....} catch(Specific Exception 2){....}.....catc(Exception ex){....}
+				- We can throw exception conditionally
+					if(CONDITION) throw new Exception("MESSAGE")
+			- Rule to be followed while using an exe calling dll
+				- MAke sure that if the method fromm the .dll throws an exception, then please catch it in a caller method from .exe
+	- System.IO Namespace
+		- Stream
+			- Contineous Set of Data (CHaracter/Byte) organized in Order
+			- FileStream
+				- Text, Xml, Json, Binary Files
+			- NetworkStream
+				- Messaging across application using Network Protocol
+			- MemoryStream
+				- USed to Write (or generate) Binary Files with 'PLay' Sequence
+					- Audio, Video, Images
+		- StreamReader
+			- Read Stream
+				- A Line
+				- To End
+				- A Block with Spcific bytes
+		- StreamWriter
+			- Write STream
+	- OS Levele File ACcess Classes
+		- Directory and DirectoryInfo
+			- Manage Directories
+		- File and FileInfo
+			- Manages Files 
+
+5. Threading
+6. Database Programming
 	- SQL Server
 	- ORM
 
