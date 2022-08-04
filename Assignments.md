@@ -133,7 +133,7 @@ Net Income: In Words and Digits
 6. Print EMployees details working Per Location
 
 # Date 03-Aug-2022
-
+	
 1. (On SPOT) MOdify the CS_FirstFile Project with File Operation class with following required methods
 	- MAke sure that all Methods should first Check an extension as '.txt' else the error Must be thrown
 		- HINT: String.substr('.')
@@ -149,3 +149,28 @@ Net Income: In Words and Digits
 	- ENcrypt and DEcryp the File
 	- Delete The File (MUST be the last Operation)
 2. Create Salary Slip for each Staff (Modify 27-July-2022 Project)
+
+
+# Date:04-Aug-2022
+1. CReate a File USing FileSTream. Using the StreamWriter Add Staff Records (Doctor, Nurses, Technician) in it (MIn 50 Records).
+2. Create a class with Following Methods to perform OPerations on the File
+	- ReadStaffByCategory(string staffCategory)
+		- This should return staff based on the staffCategory e.g. staffCategory=Doctor will return all doctors
+	- CheckIfTheStaffExsist(int StaffId)
+		- This will return the Staff based on the StaffId
+	- ReadRecordsByCount(int count)
+		- This will return records from the file based on the COunt
+	- DeleteStaffById(int StaffId)
+		- This will delete the records by StaffIf
+	- UpdateStaffById(int StaffId)
+		- This will update record by StaffId
+3. Explore The MemoryStream and NetworkStream class
+	- Write a C# code that will read an Image File and Print its details as follows
+		- FileName
+		- FileSize
+		- Extension
+	- Write a C# Code that will convert the Byte Array into Image and Image into Byte Array
+4. Write a C# COde to Read All Files from a DIctionary and its SubDirectories an print its details as follows
+	- FileName	FileSize	DateCreated	DateMOdified
+5. Write a C# COde that will copy all files from SourceDIrectory to TargetDictory
+	

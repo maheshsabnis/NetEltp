@@ -52,9 +52,11 @@ namespace CS_Stream
             {
                 fs = new FileStream(filePath, FileMode.Open, FileAccess.Read);
                 StreamReader sr = new StreamReader(fs);
-                 str = sr.ReadToEnd();
+                char[] buffer = new char[1024];
+                int res = sr.ReadBlock(buffer, 0, 6);
                 sr.Close();
                 sr.Dispose();
+                Console.WriteLine(buffer);
             }
             catch (Exception ex)
             {
