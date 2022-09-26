@@ -321,6 +321,24 @@ Date			datetime		System.DataTime	10 mm/dd/yyyy, UTC Support
 			- Manage Directories
 		- File and FileInfo
 			- Manages Files 
+# Casting
+ Upcasting is conversion from a derived (child) class to a base (parent) class. Going up the family tree. Downcasting is the opposite going from a base class to a derived class, down the tree. We will also look at the as and is keywords.
+
+
+# Upcasting
+Circle circle = new Circle();
+Shape shape = circle;  // upcasting
+
+# Downcasting
+--  At compile time it is a shape but at run time it will be Text.
+Shape shape = new Text();
+
+Text text = (Text) shape;  // downcasting!
+
+Console.WriteLine(text.FontSize.ToString("F5"));
+
+
+
 
 5. Threading
 6. Database Programming

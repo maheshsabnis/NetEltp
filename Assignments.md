@@ -94,6 +94,9 @@ Also add an Accountant class. THis class MUST have following method
 	- GetIncome(StaffLogic staff)
 		- The ABove method should return an income of any staff (Doctr,Nurse, Technician, Driver, etc) based on the Is-a relaionship of the StaffLogic class
 
+# 26-July-2022
+Using Interfaces
+
 # Date: 27-July-2022
 
 1. Make sure that, when the New Staff is Added/Updated/Deleted the Norification is generated to the Main() method
