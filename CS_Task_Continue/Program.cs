@@ -1,4 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using System.Text.Json;
+
 Console.WriteLine("Task COntinue DEMO");
 FileOperations file = new FileOperations();
 
@@ -35,19 +37,28 @@ Console.WriteLine($"Result {t2.Result}");
 Console.WriteLine();
 Payment payment = new Payment();
 
-//Task<Payment> t3 = Task.Factory.StartNew<Payment>(() =>
-//{
-//    var tds = tax.GetTDS();
-//    payment.TDS = tds;
-//    return payment;
-//}).ContinueWith<Payment>((t2) =>
-//{
-//    var gst = tax.GetGST(400000);
-//    Console.WriteLine($"Calculated GST = {gst}");
-//    return gst;
-//});
+Task<Payment> tResult = Task.Factory.StartNew<Payment>(() =>
+{
+    var tds = tax.GetTDS();
+    payment.TDS = tds;
+    Console.WriteLine($"TDS = {JsonSerializer.Serialize(payment)}");
+    return payment;
+}).ContinueWith<Payment>((t2) =>
+{
+    var gst = tax.GetGST(400000);
+    Console.WriteLine($"Calculated GST = {gst}");
+    payment.GST = gst;
+    Console.WriteLine($"GST = {JsonSerializer.Serialize(payment)}");
+    return payment;
+}).ContinueWith<Payment>((t3) => {
+     
+    payment.NetPayment = tax.GetNetPayment(400000, t3.Result.TDS, t3.Result.GST);
 
+    return payment;
+});
 
+var finalPay = tResult.Result;
+Console.WriteLine(JsonSerializer.Serialize(finalPay));
 
 
 Console.WriteLine("Ends Here");
