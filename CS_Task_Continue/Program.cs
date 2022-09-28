@@ -18,16 +18,41 @@ Console.WriteLine();
 Console.WriteLine("Task COntinue With Return Data");
 Tax tax = new Tax(400000);
 
-//Task<decimal> t2 = Task.Factory.StartNew<decimal>(() => {
+Task<decimal> t2 = Task.Factory.StartNew<decimal>(() =>
+{
+    var tds = tax.GetTDS();
+    Console.WriteLine($"TDS = {tds}");
+    return tds;
+}).ContinueWith<decimal>((t2) =>
+{
+    var gst = tax.GetGST(400000);
+    Console.WriteLine($"Calculated GST = {gst}");
+    return gst;
+});
+
+Console.WriteLine($"Result {t2.Result}");
+
+Console.WriteLine();
+Payment payment = new Payment();
+
+//Task<Payment> t3 = Task.Factory.StartNew<Payment>(() =>
+//{
 //    var tds = tax.GetTDS();
-//    Console.WriteLine($"TDS = {tds}");
-//    return tds;
-//}).ContinueWith<decimal>((t,netIncome) => {
-//   var gst = tax.GetGST(400000);
+//    payment.TDS = tds;
+//    return payment;
+//}).ContinueWith<Payment>((t2) =>
+//{
+//    var gst = tax.GetGST(400000);
+//    Console.WriteLine($"Calculated GST = {gst}");
 //    return gst;
 //});
 
+
+
+
 Console.WriteLine("Ends Here");
+
+
 
  
 
