@@ -18,6 +18,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\..\Users\acer\OneDrive\New_Lab_Documents\CSharp\LINQ_HOL.pdf = ..\..\Users\acer\OneDrive\New_Lab_Documents\CSharp\LINQ_HOL.pdf
 		..\..\Users\acer\OneDrive\New_Lab_Documents\CSharp\LINQ_TO_SQL.pdf = ..\..\Users\acer\OneDrive\New_Lab_Documents\CSharp\LINQ_TO_SQL.pdf
 		readme.md = readme.md
+		SQL_SREVRE.pptx = SQL_SREVRE.pptx
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ColletionFrwk", "ColletionFrwk", "{59A125F6-75DD-4C91-A17D-E74ED180F61C}"
@@ -162,13 +163,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_ConcurrentDictionary_Upd
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_List_Updates", "..\samplethread-main\samplethread-main\CS_List_Updates\CS_List_Updates.csproj", "{3239E3DC-52B9-493E-B709-DC66B6C4973B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_TAsk_Exception", "CS_TAsk_Exception\CS_TAsk_Exception.csproj", "{D02B77E0-E8CE-4A2B-9A27-1F68EED59D08}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_TAsk_Exception", "CS_TAsk_Exception\CS_TAsk_Exception.csproj", "{D02B77E0-E8CE-4A2B-9A27-1F68EED59D08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_COncurentDIctionary", "CS_COncurentDIctionary\CS_COncurentDIctionary.csproj", "{4FF58EDE-DE6B-48D8-9F09-857CC2135EF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_COncurentDIctionary", "CS_COncurentDIctionary\CS_COncurentDIctionary.csproj", "{4FF58EDE-DE6B-48D8-9F09-857CC2135EF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_COncurrentBag", "CS_COncurrentBag\CS_COncurrentBag.csproj", "{01389099-2144-4B90-8B5B-0393EAEB467E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_COncurrentBag", "CS_COncurrentBag\CS_COncurrentBag.csproj", "{01389099-2144-4B90-8B5B-0393EAEB467E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_ConcurrentBag_AutoResetEvents", "CS_ConcurrentBag_AutoResetEvents\CS_ConcurrentBag_AutoResetEvents.csproj", "{22AFE077-7E83-4605-A7FA-5FACF347D6CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_ConcurrentBag_AutoResetEvents", "CS_ConcurrentBag_AutoResetEvents\CS_ConcurrentBag_AutoResetEvents.csproj", "{22AFE077-7E83-4605-A7FA-5FACF347D6CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
