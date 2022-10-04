@@ -40,6 +40,19 @@ Create Table Category (
  Exec sp_rename 'Product.Descrition', 'Description';
 
 
+ -- Dependant Key, a COlumn that is diretcly depending on the Primary Key 
+ -- A UNique keu is like primary Key but it can have Null Value 
+
+
+ 
+
+CREATE TABLE Customer (
+	CustomerUniqueId int Identity(1,1) Primary Key,
+    CustomerID int NOT NULL UNIQUE,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255) Not Null,
+    Age int 
+);
 
 
 

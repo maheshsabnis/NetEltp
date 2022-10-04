@@ -44,3 +44,6 @@ Insert into Product Values('Prod-006','Iron', 'Press All', 5000, 1002, 'Phillips
 
 
 
+
+
+
