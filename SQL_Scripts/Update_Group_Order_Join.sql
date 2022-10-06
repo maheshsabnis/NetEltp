@@ -34,8 +34,7 @@ where DeptNo in ( select DeptNo From  Employee);
 
 Select max(Salary) from EMployee where Salary < (Select max(Salary) from Employee);
 
-
-
+ 
 
 
 

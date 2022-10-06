@@ -11,6 +11,8 @@ Insert into Department Values(20, 'Human Resource', 'Pune', 45);
 Insert into Department Values(30, 'Maintenence', 'Pune', 13);
 Insert into Department Values(40, 'Projects', 'Pune', 8000);
 Insert into Department Values(50, 'Accounts', 'Pune', 800);
+Insert into Department Values(60, 'Travel Desk', 'Pune', 200);
+Insert into Department Values(70, 'Suport', 'Pune', 800);
 
 Create Table Employee(
   EmpNo int Primary Key,
