@@ -344,5 +344,57 @@ Console.WriteLine(text.FontSize.ToString("F5"));
 6. Database Programming
 	- SQL Server
 	- ORM
+# Using ADO.NET
+	The Connected Archi	
+		- The client is always connected with Database
+	- System.Data, the base namsepace
+	- System.Data.SqlClient
+		- SqlConnection, Connecto to Database
+			- Sync and Asyc Methods
+				- Open(), OpenAsync()
+					- Used to Ope COnnection With Database
+				- Close(), CLose Connection
+			- The 'ConnectionStrng' property, accepts DB Connection String
+			- BeginTransaction, starts and Monitors Transactions across Mutiple Table
+		- SqlCommnad, USed to Execute SQL COmmands and SP
+			- The CommandType Property
+				- USed to define what type of command is passed to Database
+					- CommandText, Select, Insert, Update, and Delete Queries
+					- StoredProcedure, name of SP
+					- Table, the direct table to read data
+			- ExecureReader() and ExecureReaderAsync()
+				- USed when COmmand Text is Select Query
+				- Returns an instance of SqlDataReader
+			- ExecuteNonQuery() and ExecuteNonQueryAsync()
+				- USed when COmmand Text is DML Statement
+				- Returns an int representing no. of records affected
+			- ExecuteScalar() and ExecuteScalarAsync()
+				- USed when COmand Text is either using select statement with scalar function or the Stored Proc
+				- It returns a Single Value	
+			- The 'Parameters' collection Property
+				- ACcepts SqlParameters used in case when the QUERY or SP accepts parameters
+				
+		- SqlDataReader, Used to STore the resultSet aka Cursor
+			- Represents a resutset that stored the result of select statement
+			- REad-Only-Forward-Only cursor
+				- STarts reading the first row onwards by default
+			- The Read() method used to start reading
+			- The Close() method to close Reader
+			- We can have 'only-one reader' active over a connection by default
+		- SqlParameter, Parameters to SPS
 
-			
+	- System.Data.OracleClient
+	- System.Data.OleDbClient
+	- System.Data.OdbcClient
+
+- COnnection Strings
+ - Using SL Server with WInows Auth
+	- Data Source=[DB-INSTANCE-NAME | IP ADDRESS | localhost | .]; Initial Catalog=[DATABASE-NAME];Integrated Security=SSPI;
+	- Server=[DB-INSTANCE-NAME | IP ADDRESS | localhost | .];Database=[DATABASE-NAME];Integrated Security=SSPI;
+- Using SQL Server Authentication
+	- Data Source=[DB-INSTANCE-NAME | IP ADDRESS | localhost | .]; Initial Catalog=[DATABASE-NAME];User Id=[USER-NAME];Password=[PASSWORD];
+	- Server=[DB-INSTANCE-NAME | IP ADDRESS | localhost | .];Database=[DATABASE-NAME];User Id=[USER-NAME];Password=[PASSWORD];
+- Using Multiple REaders over a connection aka MARS
+	- Data Source=[DB-INSTANCE-NAME | IP ADDRESS | localhost | .]; Initial Catalog=[DATABASE-NAME];Integrated Security=SSPI;MultipleActiveResultSets=true;
+- Connecting to Datbase aynchronously
+	- Data Source=[DB-INSTANCE-NAME | IP ADDRESS | localhost | .]; Initial Catalog=[DATABASE-NAME];Integrated Security=SSPI;MultipleActiveResultSets=true;Asynchronous Processing=true
