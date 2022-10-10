@@ -8,7 +8,7 @@ using CS_SimleDataAccess.Models;
 
 namespace CS_SimleDataAccess.DataAccess
 {
-    internal class CategoryDbAccess
+    internal class CategoryDbAccess : IDisposable
     {
         SqlConnection Conn;
         SqlCommand Cmd;
@@ -138,6 +138,12 @@ namespace CS_SimleDataAccess.DataAccess
                 Conn.Close();
             }
             return isDeleted;
+        }
+
+        public void Dispose()
+        {
+            Conn.Dispose();
+            GC.SuppressFinalize(this);
         }
     }
 }
