@@ -61,26 +61,69 @@ try
 
     // USing Input and Output Parameter
 
-    Cmd.CommandText = "sp_getSumOfSalByDeptNoWitOutput";
+    //Cmd.CommandText = "sp_getSumOfSalByDeptNoWitOutput";
+    //SqlParameter pDeptNo = new SqlParameter();
+    //pDeptNo.ParameterName = "@DeptNo";
+    //pDeptNo.DbType = System.Data.DbType.Int32;
+    //pDeptNo.Direction = System.Data.ParameterDirection.Input; // DEfault is Input
+    //pDeptNo.Value = 10;
+    //Cmd.Parameters.Add(pDeptNo);
+
+
+    //SqlParameter pResultSalary = new SqlParameter();
+    //pResultSalary.ParameterName = "@ResultSalary";
+    //pResultSalary.DbType = System.Data.DbType.Int32;
+    //pResultSalary.Direction = System.Data.ParameterDirection.Output; // DEfault is Input
+    //Cmd.Parameters.Add(pResultSalary);
+    //// Only Execute the SP
+    //object result = Cmd.ExecuteScalar();
+
+    //Console.WriteLine($"Sum of the Salary for DeptNo = {pDeptNo.Value} = {pResultSalary.Value}");
+
+
+    // SP Throwin Exception
+
+    Cmd.CommandText = "sp_InsertDeptException";
+
+    // Now using the Parameters
     SqlParameter pDeptNo = new SqlParameter();
     pDeptNo.ParameterName = "@DeptNo";
     pDeptNo.DbType = System.Data.DbType.Int32;
     pDeptNo.Direction = System.Data.ParameterDirection.Input; // DEfault is Input
-    pDeptNo.Value = 10;
+    pDeptNo.Value = 90;
     Cmd.Parameters.Add(pDeptNo);
 
+    SqlParameter pDeptName = new SqlParameter();
+    pDeptName.ParameterName = "@DeptName";
+    pDeptName.DbType = System.Data.DbType.String;
+    pDeptName.Direction = System.Data.ParameterDirection.Input; // DEfault is Input
+    pDeptName.Size = 100;
+    pDeptName.Value = "Dept_90";
+    Cmd.Parameters.Add(pDeptName);
 
-    SqlParameter pResultSalary = new SqlParameter();
-    pResultSalary.ParameterName = "@ResultSalary";
-    pResultSalary.DbType = System.Data.DbType.Int32;
-    pResultSalary.Direction = System.Data.ParameterDirection.Output; // DEfault is Input
-    Cmd.Parameters.Add(pResultSalary);
-    // Only Execute the SP
-    object result = Cmd.ExecuteScalar();
+    SqlParameter pLocation = new SqlParameter();
+    pLocation.ParameterName = "@Location";
+    pLocation.DbType = System.Data.DbType.String;
+    pLocation.Direction = System.Data.ParameterDirection.Input; // DEfault is Input
+    pLocation.Size = 100;
+    pLocation.Value = "Pune";
+    Cmd.Parameters.Add(pLocation);
 
-    Console.WriteLine($"Sum of the Salary for DeptNo = {pDeptNo.Value} = {pResultSalary.Value}");
 
+    SqlParameter pCapaity = new SqlParameter();
+    pCapaity.ParameterName = "@Capacity";
+    pCapaity.DbType = System.Data.DbType.Int32;
+    pCapaity.Direction = System.Data.ParameterDirection.Input; // DEfault is Input
+    pCapaity.Value = 900;
+    Cmd.Parameters.Add(pCapaity);
+
+    var rdr = Cmd.ExecuteNonQuery();
+     
     Conn.Close();
+}
+catch (SqlException ex)
+{
+    Console.WriteLine($"SQL Error {ex.Message}");
 }
 catch (Exception ex)
 {
