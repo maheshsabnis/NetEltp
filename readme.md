@@ -420,11 +420,13 @@ Console.WriteLine(text.FontSize.ToString("F5"));
 5. STructrization
 	- Ds.Tables, return DataTableCollection
 	- Ds.Table[INDEX | TABLE-NAME], returns a DataTable
+
 	- DataTable Dt = new DataTable()
 		- Dt.Columns, return DataColumnCollection
 		- Dt.Column[INDEX | COLUMN-NAME], returns a Single DataColumn 
 		- Dt.Rows, return DataRowCollection
 		- Dr.Rows[INDEX], return a Single DataRow
+
 6. Adding a New Row in DataTable of DataSet
 	- First CReate a DataRow Object That points to New Row of DataTable in DataSet
 		- DataRow Dr = Ds.Tables["NAME"].NewRow();
