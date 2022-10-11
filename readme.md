@@ -398,3 +398,53 @@ Console.WriteLine(text.FontSize.ToString("F5"));
 	- Data Source=[DB-INSTANCE-NAME | IP ADDRESS | localhost | .]; Initial Catalog=[DATABASE-NAME];Integrated Security=SSPI;MultipleActiveResultSets=true;
 - Connecting to Datbase aynchronously
 	- Data Source=[DB-INSTANCE-NAME | IP ADDRESS | localhost | .]; Initial Catalog=[DATABASE-NAME];Integrated Security=SSPI;MultipleActiveResultSets=true;Asynchronous Processing=true
+
+
+# ADO.NET DIsonnected Architecture
+
+1.Establish Connection usin SqlConnecton
+2. CReate a DataSet
+	- DataSet Ds = new DataSet()
+3. DEfine an Adapter
+	- SQlDataAdpater Ad = new SqlDataAdapter(Conn, "PLain Select Statement")
+		- The Table MUST have Primary Key
+4. Fill Data into DataSet
+	- Two Types of DataSets
+		- Typed DataSet
+			- The DataSet will fill data of table along ith all of its Constraints
+		- UnTyped DataSet (DEfault)
+			- Only Data will be present
+	- Before Filling Data into the DataSet, ask adpater to read Keys and other Constraints
+		- Ad.MissingShmaAction = MIssinSchemaAction.AddWithKey;
+	- Ad.Fill(Ds,"TABLE-NAME");
+5. STructrization
+	- Ds.Tables, return DataTableCollection
+	- Ds.Table[INDEX | TABLE-NAME], returns a DataTable
+	- DataTable Dt = new DataTable()
+		- Dt.Columns, return DataColumnCollection
+		- Dt.Column[INDEX | COLUMN-NAME], returns a Single DataColumn 
+		- Dt.Rows, return DataRowCollection
+		- Dr.Rows[INDEX], return a Single DataRow
+6. Adding a New Row in DataTable of DataSet
+	- First CReate a DataRow Object That points to New Row of DataTable in DataSet
+		- DataRow Dr = Ds.Tables["NAME"].NewRow();
+	- Set the Column Values for Row
+		- Dr["COLUMN-NAME" | IDNEX] = VALUE;
+	- Add this Row in Rows COllection of DataTable in DataSet
+		- Ds.Tables["TABLE-NAME"].Rows.Add(Dr);
+	- Define a COmmand Builder and PAss Adapater to It
+		- SqlCOmmandBuilder bldr = new SqlCommandBuilder(Ad);
+	- Call Update Method on Data Adpater
+		- Ad.Update(Ds, "TABLE-NAME");
+7. Update Record
+	- Search Record based on Primary Key (Typed DataSet)
+		- DataRow DrFind = Ds.Tables["TABLE-NAME"].Rows.Find(PRIMARY-KEY-VALUE);
+	- Update Colum Valus for Searched DataRow Object
+	- Call COmmand Builder
+	- Ad.Update(Ds,"TABLE-NAME");
+8. Delete Record
+	- Search Record based on Primary Key (Typed DataSet)
+		- DataRow DrDelete = Ds.Tables["TABLE-NAME"].Rows.Find(PRIMARY-KEY-VALUE);
+		- DrDelete.Delete()
+	- Call COmmand Builder
+	- Ad.Update(Ds,"TABLE-NAME");
