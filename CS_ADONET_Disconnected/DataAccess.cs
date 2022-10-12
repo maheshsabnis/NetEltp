@@ -85,8 +85,10 @@ namespace CS_ADONET_Disconnected
              Console.WriteLine(Ds.GetXml());
             Console.WriteLine();
              SqlCommandBuilder builder = new SqlCommandBuilder(AdDept);
+            AdDept.ContinueUpdateOnError = true;
             // Update
             AdDept.Update(Ds, "Department");
+            
 
         }
 
@@ -103,6 +105,12 @@ namespace CS_ADONET_Disconnected
             // Update
             AdDept.Update(Ds, "Department");
 
+        }
+
+        public DataRowCollection GetRows()
+        {
+            var rows = Ds.Tables["Department"].Rows;
+            return rows;
         }
     }
 }

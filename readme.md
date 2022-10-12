@@ -450,3 +450,25 @@ Console.WriteLine(text.FontSize.ToString("F5"));
 		- DrDelete.Delete()
 	- Call COmmand Builder
 	- Ad.Update(Ds,"TABLE-NAME");
+
+- System.Data
+	- DbConnection : IDbConnection
+	- DbCommand : IDbComand
+	- DbRrader : IDbReader
+	- DbAdapater" IDbAdapter
+
+- Using Dapper
+	- Purely build on ADO.NET Object Model
+		- Micro-ORM
+	- USed of Classes from System.Data
+	- Added Extension methods in the SqlConnection class
+		- ExecuteAsyc(query-as-string, parameters)
+		- Query()
+		- QuerySingle()
+		- QuerySingleOrDefault()
+		- ... etc
+	- DynamicParameter class to add parameters to Query
+	- Dapper PAckage
+	- Microsoft.Data.SqlClient
+		- V4
+		
