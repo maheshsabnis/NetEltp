@@ -172,6 +172,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_ConcurrentBag_AutoResetEvents", "CS_ConcurrentBag_AutoResetEvents\CS_ConcurrentBag_AutoResetEvents.csproj", "{22AFE077-7E83-4605-A7FA-5FACF347D6CE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccessReceipts", "DataAccessReceipts", "{11BFCA1D-6ECB-4446-87E1-D3EF3D6E8BE2}"
+	ProjectSection(SolutionItems) = preProject
+		LINQ-TO_SQL.txt = LINQ-TO_SQL.txt
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_SimleDataAccess", "CS_SimleDataAccess\CS_SimleDataAccess.csproj", "{A449957E-B8CC-4047-A415-3AB2EC4AE521}"
 EndProject
