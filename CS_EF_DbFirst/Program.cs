@@ -25,10 +25,14 @@ try
     var deptSIngle = await deprds.GetAsync(202);
     Console.WriteLine(deptSIngle.DeptName); 
     Console.WriteLine();
-    var d = new Department() { DeptNo = 203, DeptName = "DEpt_203", Location = "Pune", Capacity = 2100 };
+    var d = new Department() { DeptNo = 203, DeptName = "DEpt_203", Location = "Pune", Capacity = 2200 };
     //   await deprds.CreateAsync(d);
     // await deprds.UpdateAsync(d.DeptNo, d);
-    await deprds.DeleteAsync(d.DeptNo);
+
+    // await deprds.CreateDirectAsync(d);
+
+    await deprds.UpdateDirectAsync(d.DeptNo,d);
+    //await deprds.DeleteAsync(d.DeptNo);
     Console.WriteLine();
     res = await deprds.GetAsync();
     Print(res);
