@@ -21,3 +21,7 @@
 
 4. How to DEfine One-to-Many Relationships
 	- Parent and CHild Table
+
+5. HasMany().WithMany()
+	- Extension Methods for ModeelBuilder class
+	- Entity.HasMany() Related Entities, and Reated Entities has relationship WithMany() entities

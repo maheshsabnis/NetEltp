@@ -3,6 +3,7 @@ using CS_EF_CodeFirst.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CS_EF_CodeFirst.Migrations
 {
     [DbContext(typeof(InfoDbContext))]
-    partial class InfoDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221018053105_tablePerHiererchyMigration")]
+    partial class tablePerHiererchyMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -3,6 +3,7 @@ using CS_EF_CodeFirst.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CS_EF_CodeFirst.Migrations
 {
     [DbContext(typeof(InfoDbContext))]
-    partial class InfoDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221018040637_manyToManyMigration")]
+    partial class manyToManyMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -156,32 +158,6 @@ namespace CS_EF_CodeFirst.Migrations
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("CS_EF_CodeFirst.Models.ProductionUnit", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("ReleaseYear")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ProductionUnits");
-
-                    b.HasDiscriminator<string>("Discriminator").HasValue("ProductionUnit");
-                });
-
             modelBuilder.Entity("CustomerOrder", b =>
                 {
                     b.Property<int>("CustomersCustomerId")
@@ -195,74 +171,6 @@ namespace CS_EF_CodeFirst.Migrations
                     b.HasIndex("OrdersOrderId");
 
                     b.ToTable("CustomersOrders", (string)null);
-                });
-
-            modelBuilder.Entity("CS_EF_CodeFirst.Models.Movies", b =>
-                {
-                    b.HasBaseType("CS_EF_CodeFirst.Models.ProductionUnit");
-
-                    b.Property<double>("BoxOfficeCollection")
-                        .HasColumnType("float");
-
-                    b.Property<string>("Category")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("PlayDuration")
-                        .HasColumnType("int");
-
-                    b.HasDiscriminator().HasValue("Movies");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Dr.No",
-                            ReleaseYear = 1963,
-                            BoxOfficeCollection = 12222.0,
-                            Category = "Spy",
-                            PlayDuration = 150
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Golmal",
-                            ReleaseYear = 1976,
-                            BoxOfficeCollection = 122.0,
-                            Category = "Comedy",
-                            PlayDuration = 180
-                        });
-                });
-
-            modelBuilder.Entity("CS_EF_CodeFirst.Models.WebSeries", b =>
-                {
-                    b.HasBaseType("CS_EF_CodeFirst.Models.ProductionUnit");
-
-                    b.Property<int>("EpisodPerSeason")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Seasons")
-                        .HasColumnType("int");
-
-                    b.HasDiscriminator().HasValue("WebSeries");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 3,
-                            Name = "Ramayan",
-                            ReleaseYear = 1986,
-                            EpisodPerSeason = 100,
-                            Seasons = 2
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Name = "House of Cards",
-                            ReleaseYear = 2005,
-                            EpisodPerSeason = 50,
-                            Seasons = 6
-                        });
                 });
 
             modelBuilder.Entity("CS_EF_CodeFirst.Models.Product", b =>
