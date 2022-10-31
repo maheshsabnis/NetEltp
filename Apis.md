@@ -1,0 +1,68 @@
+# ASP.NET Core 6 APIs
+1. Data Services
+2. Http Action Methods
+	- These methods will be executed when the HTTP Call to made to it
+		- Http GET, POST, PUT, and DELETE
+		- GET: Retrieve data from Server
+		- POST: CReate a new Enrty by posting / passing data to server
+		- PUT: Updating existing record on the server
+		- DELETE: Deleting eisting record from the server
+	- Each action method returns JSON Data by default
+3. Microsoft.AspNetCore.App
+	- ASP.NET Core Eco-System
+		- HTTP Pipeline for Request Processing
+			- Host Application inside Hosting Environment
+				- IIS
+				- Kestral (Default)
+				- Apache / Nginx
+				- Docker
+			- A Container to Register all Dependencies with their Instances and Lifetime
+			- Load all Objects those are used during Processing request
+				- Exceptions
+				- HTTP
+				- Encryption
+				- ROuting
+				- File Providers Access
+				- Mapping Request to Resource
+					- Razor Page
+					- MVC COnrtoller
+					- API Controller
+		- Support for Identity
+		- RAzor Views
+		- MVC, with Controllers
+		- API, with ApiController
+		- Filters
+		- Middlewares
+
+4. ASP.NET Core 6 Object Model
+	- WebApplication
+		- The class that is acting as a bridge netween ASP.NET Core and Hosting Env.
+		- CreateBuilder()
+			- USed to Create a Builder Object which is a collection of necessary (or default) objects used to run ASP.NET COre App on the Host  
+			- The 'Services' property
+				- Of the Type 'IServiceCollection'
+				- Povides a 'Dependency Container' to register instances of all necessary objects required by the current application
+						- Database
+						- Security
+						- Session
+						- Caching
+						- Custom Objets (Logic Objects) Required by the Application
+						- External Service Objects e.g. BAckground Service
+						- ... and many more
+			- The 'Build()' method
+				- Of the Type WebApplicationBuilder
+					- Register 'Middlewares' into the HTTP Request Pipeline
+					- They are the objects those are added into pipeline to provde addtional fetures to HTTP Request Processing
+						- Handle Exceptions when any of the API is crashed
+					- Middlewares are replacement for HttpHandler and HttpModule
+	- appsettings.json
+		- APplication level Configuration file
+		- USed to define consfigurations as follows
+			- Connection Strings
+			- Logging Level
+			- Host COnfguration
+			- Token
+			- Custom COnfiguration that is required for the whole application
+		- IConfiguration Interface
+			- USed to REad the appsettings.json file loaded on application Server, using 'WebApplicationBuilder.Configuration' property
+			- WebApplicationBuilder.Configuration, is of the type 'ConfigurationManager'

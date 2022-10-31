@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Tasks_Files": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:52836;http://localhost:52838"
+    }
+  }
+}
