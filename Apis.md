@@ -66,3 +66,18 @@
 		- IConfiguration Interface
 			- USed to REad the appsettings.json file loaded on application Server, using 'WebApplicationBuilder.Configuration' property
 			- WebApplicationBuilder.Configuration, is of the type 'ConfigurationManager'
+5. Parameter Binders aka Model Binders
+	- Attributes applied to Action Method Parameter of API Controller to Map Values received from HTTP Request to CLR Object
+		- FromBody: Data will be POsted in HTTP Request MEssage Body
+		- FromQuery: The Data will be poasted i QUeryString(?)
+			- QueryString is a portion of URL after Question MArk
+				- e.g.
+					- https://MyServer/MyAPI/MyController?Name1=Value1&Name2=Vaue2.....
+		- FromRoute: Posted Data in URL as Route Values
+			- e.g.
+				- https://MyServer/MyAPI/MyController/Val1/Va2/Val3.....
+			
+		- FromForm
+			- USes the HTML FOrm Tag to Post data to Server as FormModel aka FormField
+		- FromHeader
+			- Data is Posted from Http Header

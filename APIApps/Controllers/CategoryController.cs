@@ -24,7 +24,7 @@ namespace APIApps.Controllers
     ///     - Ok(), NotFound(), Create(), BadRequest(), NoContent(), etc.
     /// </summary>
     [Route("api/[controller]")]
-    [ApiController]
+   [ApiController]
     public class CategoryController : ControllerBase
     {
         IDbAccessService<Category, int> catService;
@@ -35,11 +35,45 @@ namespace APIApps.Controllers
         {
             catService = serv;
         }
+        /// <summary>
+        /// http://loalhost:7083/api/Category
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> Get()
         {
             var result = await catService.GetAsync();
             return Ok(result);  
+        }
+        /// <summary>
+        /// The id is a Template Expression Parameter in the Request URL
+        ///  http://loalhost:7083/api/Category/1001
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(int id)
+        {
+            var result = await catService.GetAsync(id);
+            return Ok(result);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Post(Category cat)
+        {
+            var result = await catService.CreateAsync(cat);
+            return Ok(result);
+        }
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Put(int id,Category cat)
+        {
+            var result = await catService.UpdateAsync(id,cat);
+            return Ok(result);
+        }
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var result = await catService.DeleteAsync(id);
+             return Ok(result);
         }
     }
 }

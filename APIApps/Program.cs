@@ -24,7 +24,12 @@ builder.Services.AddScoped<IDbAccessService<Product,int>,ProductDataAccessServic
 
 // REgister the HTTP Pipeline for API COntrollers
 // THis will loo for API Controllers instance and execute it
-builder.Services.AddControllers();
+// AddJsonOptions() an additional Service to manage the Response Formatting
+builder.Services.AddControllers().AddJsonOptions(options => {
+    // ReSet the JSON Serialization to the format for
+    // Property Naming as per provided in ENtity class
+    options.JsonSerializerOptions.PropertyNamingPolicy = null;
+});
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -42,7 +47,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
-
+// Map the API Controller to the Incomming Request
 app.MapControllers();
 
 app.Run();
