@@ -81,3 +81,18 @@
 			- USes the HTML FOrm Tag to Post data to Server as FormModel aka FormField
 		- FromHeader
 			- Data is Posted from Http Header
+- Validations
+	- Data Annatations
+		- APply attributes on Propertie of Entity CLass to set its behavior e.g. Required
+		- System.ComponentMOdel.DataAnntations
+	- Domain Specific Validations
+		- A Custom Data Annotation Validator
+	- Explicit Logic to Validate a Property of Entity / Model class
+		- e.g.
+			- Check if the Email is already registered 
+			- The Price of Product is MOre than the BasePrice for the cataegory under which the Product will be registered
+				- THis may be either INvlid Value OR you may throw an exception
+	- The 'ValidationAttribute' is a Base class for All Standard Validattors under  System.ComponentMOdel.DataAnntations
+		- THis is an Abstratc class that contains 'IsValid()' metho that returns false if the data in invalid
+			
+
