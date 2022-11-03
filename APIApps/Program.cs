@@ -1,3 +1,4 @@
+using APIApps.CustomOps.CustomMiddlewares;
 using APIApps.Models;
 using APIApps.Services;
 using Microsoft.EntityFrameworkCore;
@@ -48,6 +49,10 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+// USe the Custom MIddleware
+app.UseAppExceptionHandler();
+
 // Map the API Controller to the Incomming Request
 app.MapControllers();
 

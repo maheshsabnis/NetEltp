@@ -60,24 +60,34 @@ namespace APIApps.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(Category cat)
         {
-            if (ModelState.IsValid)
-            {
-                // Check if the CategoryName is already present
-                var isCategoryExist = (await catService.GetAsync())
-                                        .Where(c => c.CategoryName == cat.CategoryName)
-                                        .FirstOrDefault();
-                if (isCategoryExist != null) 
-                   return Conflict($"There is alreay a Category with Name {cat.CategoryName} exist.");
+            //try
+            //{
+                if (ModelState.IsValid)
+                {
+                    // Check if the CategoryName is already present
+                    var isCategoryExist = (await catService.GetAsync())
+                                            .Where(c => c.CategoryName == cat.CategoryName)
+                                            .FirstOrDefault();
+                    if (isCategoryExist != null)
+                        throw new Exception("There is alreay a Category with Name {cat.CategoryName} exist.");
+                        //return Conflict($"There is alreay a Category with Name {cat.CategoryName} exist.");
 
-                var result = await catService.CreateAsync(cat);
-                return Ok(result);
-            }
-            return BadRequest();
+                    var result = await catService.CreateAsync(cat);
+                    return Ok(result);
+                }
+                return BadRequest();
+            //}
+            //catch (Exception ex)
+            //{
+            //    return Conflict(ex.Message);
+            //}
             
         }
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(int id,Category cat)
         {
+            if (cat.CategoryName.Length > 6)
+                throw new Exception($"Sorry I cannot accept such a ength for Category NAme");
             var result = await catService.UpdateAsync(id,cat);
             return Ok(result);
         }

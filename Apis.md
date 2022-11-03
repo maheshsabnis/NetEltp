@@ -94,5 +94,16 @@
 				- THis may be either INvlid Value OR you may throw an exception
 	- The 'ValidationAttribute' is a Base class for All Standard Validattors under  System.ComponentMOdel.DataAnntations
 		- THis is an Abstratc class that contains 'IsValid()' metho that returns false if the data in invalid
+		
+- Rules for CReating custom middleware
+	- We must create a class which is injected using 'RequestDelegate' delegate
+		- This delegate accepts an input parameter as 'HttpContext'
+		- THis becomes a part of teh Request Processing throguh the HttpContext
+	- THis class MUST have a method named 'InvokeAsync(HttpContext)' that accepts the HttpContext as Input parameter and this method contains logic for the middleware
+		- THis method returns a Task Object for Async Execution 
+	- There MUST present a class that register the class with Requestelegate injected as a Custom Middleware for the Application
+		- This class will contains an extension method for IApplicationBuilder interface
+			- THis interface provide UseMiddleware<T>() methdo to register the Class as Custome middlwere
+				- T is the class that is injected with RequestDelegate
 			
 
