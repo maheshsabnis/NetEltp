@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace APIApps.Models
 {
@@ -12,7 +13,7 @@ namespace APIApps.Models
         public decimal Price { get; set; }
         public int CategoryId { get; set; }
         public string Manufacturer { get; set; } = null!;
-
-        public virtual Category Category { get; set; } = null!;
+        // The Nullable Reference TYpe (C# 9.0+)    
+        public virtual Category? Category { get; set; }
     }
 }

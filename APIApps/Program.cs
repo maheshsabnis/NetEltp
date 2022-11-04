@@ -30,6 +30,7 @@ builder.Services.AddControllers().AddJsonOptions(options => {
     // ReSet the JSON Serialization to the format for
     // Property Naming as per provided in ENtity class
     options.JsonSerializerOptions.PropertyNamingPolicy = null;
+    
 });
 
 
