@@ -2,6 +2,8 @@ using Coditas.EComm.DataAccess.Models;
 using Coditas.EComm.Entities;
 using Coditas.EComm.Repositories;
 using Microsoft.EntityFrameworkCore;
+using MVC_Apps.CustomFilters;
+using NuGet.Protocol.Plugins;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +16,13 @@ builder.Services.AddScoped<IDbRepository<Category, int>,CategoryRepository>();
 builder.Services.AddScoped<IDbRepository<Product, int>, ProductRepository>();
 // Accept the Request for MVC and API Controllers
 // For MVC Controllers this hels to Locate View to execute
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews(options => 
+{
+    // Global REgistration of Action Filter
+    options.Filters.Add(typeof(CustomLogRequestAttribute));
+    // REgister the Exception Filter
+    options.Filters.Add(typeof(AppExceptionAttribute));
+});
 
 var app = builder.Build();
 
