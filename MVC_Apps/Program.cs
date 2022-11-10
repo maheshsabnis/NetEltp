@@ -24,6 +24,12 @@ builder.Services.AddControllersWithViews(options =>
     options.Filters.Add(typeof(AppExceptionAttribute));
 });
 
+// COnfigure The Session
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options => {
+   options.IdleTimeout= TimeSpan.FromMinutes(20);
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -43,6 +49,10 @@ app.UseStaticFiles();
 // MVC Controller ROuting to execute 
 // an Action Mathod of a COntrller class
 app.UseRouting();
+// USe the Session Middleware SO that, the HTTP Pipeline will use
+// SessionId as Well as REad Data STored in Session
+app.UseSession();
+
 // USed in Case of Role BAsed Security
 app.UseAuthorization();
 // Map the Incomming HTTP Request URL to

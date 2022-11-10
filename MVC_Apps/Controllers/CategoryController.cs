@@ -4,6 +4,7 @@ using Coditas.EComm.Repositories;
 using System.Runtime.InteropServices;
 using MVC_Apps.Models;
 using MVC_Apps.CustomFilters;
+using MVC_Apps.CustomSessionExtensions;
 
 namespace MVC_Apps.Controllers
 {
@@ -106,6 +107,21 @@ namespace MVC_Apps.Controllers
 
                 throw;
             }
+        }
+
+
+        public async Task<IActionResult> ShowDetails(int id)
+        {
+            // Save the 'id' isn Session State
+            HttpContext.Session.SetInt32("CategoryId", id);
+
+            // Save Entity Object in Session
+            var category = await catRepo.GetAsync(id);
+            HttpContext.Session.SetObject<Category>("Cat", category);
+
+            // Redirect to the ProductController and its Index Method
+            return RedirectToAction("Index", "Product");
+
         }
 
     }
