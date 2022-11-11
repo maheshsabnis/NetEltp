@@ -7,6 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\BinderAPIController.cs" />
+    <Compile Remove="Controllers\CategoryController.cs" />
+    <Compile Remove="Controllers\CombineController.cs" />
+    <Compile Remove="Controllers\PrductController.cs" />
+    <Compile Remove="Controllers\ProductRController.cs" />
+    <Compile Remove="Controllers\WeatherForecastController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.0">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

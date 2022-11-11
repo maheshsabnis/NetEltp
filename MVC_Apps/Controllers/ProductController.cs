@@ -36,23 +36,34 @@ namespace MVC_Apps.Controllers
        // [LogRequest]
         public async Task<IActionResult> Index()
         {
-            IEnumerable<Product> records;
+            IEnumerable<Product> records = null;
             try
             {
                 // REad CategoryId from Session
-                int CategoryId = Convert.ToInt32( HttpContext.Session.GetInt32("CategoryId"));
+                //   int CategoryId = Convert.ToInt32( HttpContext.Session.GetInt32("CategoryId"));
 
-                var cat = HttpContext.Session.GetObject<Category>("Cat");
 
-                if (CategoryId == 0)
+                // REading Data from TempData
+                if (TempData.Keys.Count > 0)
                 {
-                    records = await prdRepo.GetAsync();
+                    int CategoryId = Convert.ToInt32(TempData["CategoryId"]);
+
+
+                    var cat = HttpContext.Session.GetObject<Category>("Cat");
+
+                    if (CategoryId == 0)
+                    {
+                        records = await prdRepo.GetAsync();
+                    }
+                    else
+                    {
+                        records = (await prdRepo.GetAsync()).Where(p => p.CategoryId == CategoryId).ToList();
+                    }
                 }
-                else
-                {
-                    records = (await prdRepo.GetAsync()).Where(p => p.CategoryId == CategoryId).ToList();
-                }
-                
+
+                // INform the Service to Maintain The TempData with
+                // either all keys or a Specific Key
+                TempData.Keep();
                 
                 return View(records);
             }
@@ -64,6 +75,8 @@ namespace MVC_Apps.Controllers
 
         public async Task<IActionResult> Create()
         {
+            var x = TempData["CategoryId"];
+
             var product = new Product();
             // PAss LIst of Categories to Create.cshtml 
             List<Category> categories = (await catRepo.GetAsync()).ToList();
@@ -100,7 +113,8 @@ namespace MVC_Apps.Controllers
         }
 
         public async Task<IActionResult> Edit(int id)
-        { 
+        {
+            var x = TempData["CategoryId"];
             var record = await prdRepo.GetAsync(id);
             return View(record);
         }

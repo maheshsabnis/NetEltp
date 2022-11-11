@@ -113,7 +113,11 @@ namespace MVC_Apps.Controllers
         public async Task<IActionResult> ShowDetails(int id)
         {
             // Save the 'id' isn Session State
-            HttpContext.Session.SetInt32("CategoryId", id);
+            // HttpContext.Session.SetInt32("CategoryId", id);
+
+            // Using The TempData
+            TempData["CategoryId"] = id;
+
 
             // Save Entity Object in Session
             var category = await catRepo.GetAsync(id);
