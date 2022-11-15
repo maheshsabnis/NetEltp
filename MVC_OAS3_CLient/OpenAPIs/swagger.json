@@ -1,0 +1,129 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "APIApps",
+    "version": "1.0"
+  },
+  "paths": {
+    "/getcategoties": {
+      "get": {
+        "tags": [
+          "CategoryOAS"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Category"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/createcategory": {
+      "post": {
+        "tags": [
+          "CategoryOAS"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Category"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Category"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Category": {
+        "required": [
+          "BasePrice",
+          "CategoryId",
+          "CategoryName"
+        ],
+        "type": "object",
+        "properties": {
+          "CategoryId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "CategoryName": {
+            "type": "string"
+          },
+          "BasePrice": {
+            "type": "number",
+            "format": "double"
+          },
+          "Products": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Product"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Product": {
+        "type": "object",
+        "properties": {
+          "ProductUniqueId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ProductId": {
+            "type": "string",
+            "nullable": true
+          },
+          "ProductName": {
+            "type": "string",
+            "nullable": true
+          },
+          "Description": {
+            "type": "string",
+            "nullable": true
+          },
+          "Price": {
+            "type": "number",
+            "format": "double"
+          },
+          "CategoryId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Manufacturer": {
+            "type": "string",
+            "nullable": true
+          },
+          "Category": {
+            "$ref": "#/components/schemas/Category"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

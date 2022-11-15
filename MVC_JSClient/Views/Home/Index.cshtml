@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<script>
+    window.onload = function(){
+       var btnget = document.getElementById('btnget');
+       btnget.addEventListener('click', function(){
+           var http = new XMLHttpRequest();
+
+            // subscribe to onload event if the call is successful
+            http.onload = function(evt){
+                console.log(http.response);
+            };
+            // If error Occur
+            http.onerror = function(err){
+                console.log(`Error Occurred ${err}`);
+            }
+
+            // OPen the Call to REST API
+            http.open("GET", "https://localhost:7083/getcategoties");
+            // send the Request
+            http.send();
+       },false);
+
+        var btnpost = document.getElementById('btnpost');
+        btnpost.addEventListener('click', function () {
+            var http = new XMLHttpRequest();
+
+            // subscribe to onload event if the call is successful
+            http.onload = function (evt) {
+                console.log(http.response);
+            };
+            // If error Occur
+            http.onerror = function (err) {
+                console.log(`Error Occurred ${err}`);
+            }
+
+            // OPen the Call to REST API
+            http.open("POST", "https://localhost:7083/createcategory");
+            // Set the Request HEader
+            http.setRequestHeader('Content-Type', 'application/json');
+            // Define a Data
+            var category = {
+              "CategoryId":9008,
+              "CategoryName": "Paythan",
+              "BasePrice":999
+            };
+            // send the Request with Data
+            http.send(JSON.stringify(category));
+        }, false);
+    };
+</script>
+
+<div class="container">
+    <input type="button" id="btnget" value="Get Data"/>
+    <hr/>
+    <input type="button" id="btnpost" value="Post Data" />
+</div>

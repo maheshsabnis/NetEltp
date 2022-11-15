@@ -33,6 +33,15 @@ builder.Services.AddControllers().AddJsonOptions(options => {
     
 });
 
+// COnfigure the API for Cross-Origin-Resource-SHaring Service
+builder.Services.AddCors(options => 
+{
+    options.AddPolicy("CORS",policy => 
+    {
+        policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+    });
+}); 
+
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -48,6 +57,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+// Provide CORS Policy to HTTP Pipeline using the UseCors() Middleware
+app.UseCors("CORS");
+
 
 app.UseAuthorization();
 
