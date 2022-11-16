@@ -35,13 +35,15 @@ builder.Services.AddControllers().AddJsonOptions(options => {
 
 // COnfigure the API for Cross-Origin-Resource-SHaring Service
 builder.Services.AddCors(options => 
+
 {
     options.AddPolicy("CORS",policy => 
     {
         policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
     });
-}); 
-
+});
+// The Service for Memory Cache
+builder.Services.AddMemoryCache();  
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
