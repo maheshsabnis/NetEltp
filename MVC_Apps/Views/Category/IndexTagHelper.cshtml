@@ -1,0 +1,9 @@
+﻿@model IEnumerable<Coditas.EComm.Entities.Category>
+
+@{
+    ViewData["Title"] = "IndexTagHelper";
+}
+
+<h1>Index View with TagHelper</h1>
+
+<list-generator categories="@Model"></list-generator>

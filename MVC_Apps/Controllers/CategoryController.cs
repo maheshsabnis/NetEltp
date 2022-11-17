@@ -47,6 +47,20 @@ namespace MVC_Apps.Controllers
             }
         }
 
+        public async Task<IActionResult> IndexTagHelper()
+        {
+            try
+            {
+                var records = await catRepo.GetAsync();
+               
+                return View(records);
+            }
+            catch (Exception ex)
+            {
+                return View("Error");
+            }
+        }
+
         public async Task<IActionResult> Create()
         {
             var category = new Category();
