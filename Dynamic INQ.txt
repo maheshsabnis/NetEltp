@@ -1,0 +1,29 @@
+var result = from o in someObj 
+             where (Name == null || o.Name == Name)
+             && (City == null || o.City == City)
+             && (State == null || o.State == State)
+             select o;
+
+
+             SELECT "d"."Id", "d"."Amount", "d"."Category", "d"."PaymentMode", "d"."TransactionType"
+FROM "DbTransactions" AS "d"
+WHERE ("d"."Category" IN ('Clothing') &
+        ((("d"."TransactionType" = 'income') AND "d"."TransactionType" IS NOT NULL) |
+          (("d"."PaymentMode" = 'Credit') AND "d"."PaymentMode" IS NOT NULL))) &
+      ("d"."Amount" = '10.0')
+ORDER BY "d"."Id"
+
+
+https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/expression-trees/how-to-use-expression-trees-to-build-dynamic-queries
+
+
+CReate a Dynamic Expression (Predicate)
+
+var andCriteria = new List();
+Expression<Func<Employee, bool>> predicate;
+string Fieldname = string.Empty, FieldValue = string.Empty;
+var type = t.GetProperty(Fieldname);
+                   andCriteria.Add(c => Cast(type.GetValue(c),   type.PropertyType) == Cast(FieldValue, type.PropertyType));
+                   
+predicate = c => andCriteria.All(pred => pred(c));
+result = employees.AsQueryable().Where(predicate).ToList();
