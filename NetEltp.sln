@@ -17,6 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\..\Users\acer\OneDrive\New_Lab_Documents\CSharp\Generics_Lab.pdf = ..\..\Users\acer\OneDrive\New_Lab_Documents\CSharp\Generics_Lab.pdf
 		..\..\Users\acer\OneDrive\New_Lab_Documents\CSharp\LINQ_HOL.pdf = ..\..\Users\acer\OneDrive\New_Lab_Documents\CSharp\LINQ_HOL.pdf
 		..\..\Users\acer\OneDrive\New_Lab_Documents\CSharp\LINQ_TO_SQL.pdf = ..\..\Users\acer\OneDrive\New_Lab_Documents\CSharp\LINQ_TO_SQL.pdf
+		Quiz_Coditas.txt = Quiz_Coditas.txt
 		readme.md = readme.md
 		SQL_SREVRE.pptx = SQL_SREVRE.pptx
 	EndProjectSection
@@ -220,9 +221,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Coditas.EComm.Repositories"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MVCCore_OAS3Client", "MVCCore_OAS3Client\MVCCore_OAS3Client.csproj", "{E39C687B-E787-43E3-9F14-F804411F6E98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC_OAS3_CLient", "MVC_OAS3_CLient\MVC_OAS3_CLient.csproj", "{F7BB5667-563C-4E31-B68B-732D2DBC2E6A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MVC_OAS3_CLient", "MVC_OAS3_CLient\MVC_OAS3_CLient.csproj", "{F7BB5667-563C-4E31-B68B-732D2DBC2E6A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC_JSClient", "MVC_JSClient\MVC_JSClient.csproj", "{8405769C-E874-41B3-A8CC-158635EF0C33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MVC_JSClient", "MVC_JSClient\MVC_JSClient.csproj", "{8405769C-E874-41B3-A8CC-158635EF0C33}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,0 +1,90 @@
+1.Which Access Specifier will provide access of method only within the namespace?
+
+2. Which of the following class represents the client Side Database?
+
+3. Which keyword is used to define block scope variable declaration?
+
+4. Which operator is used to implement method shadowing?
+
+5. Which keyword is used to prevent the class from inheritance?
+
+6. Which namespace must be used for accessing DataSet class in Current code file?
+
+7. How to pass variable number of parameters to a method?
+
+8. Which of the following operator is used to compare two values?
+
+9. How to pass parameters with reference to a method?
+
+10. Is the following syntax valid public int Sum(params int[]x, int a,int b) {….}
+
+11. Can we concatinate two strings using + operator?
+
+12. What is the size of byte datatype?
+
+13. What is the size of char data type?
+
+14. Which of the following interface is always implemented by .NET Collection Classes?
+
+15. What is the State property of the SqlConnection object?
+
+16. In case of class List<T>, what is T?
+
+17. Can we overrode the private method of abstract class using public method of the derived class?
+
+18. Can we add protected method in sealed class?
+
+19. Can we have a class with 2 methods with same method name with same data type and order of parameter but different in return type be called as method overloading?
+
+20. Is is possible to implement one interface by other interface?
+
+21. Can a class implement multiple interfaces with same methods with same parameters with datatypes, order and return type defined in it?
+
+22. What is the use explicit interface implementation by a class?
+
+23. Can we execute a delegate for Asynchronous execution of a method of which reference passed to it?
+
+24. What will be the meaning the following SQL Statement: Alter Table Department Add Constraint DeptName_Unique UNIQUE(DeptName);
+
+25. What is the meanoing of the following column definition while table creation: CommentId int Identity(1, 10) PRIMARY Key
+
+26. How to delete all rows from the table and reset it?
+
+27. What will be the result of the following select statement: select * from Employee where EmpName Like 'M%';
+
+28. What will b eresult of the following Select Statement: select EmpNo, EmpName, Designation, Salary, Email from Employee
+ where Designation in ('Manager', 'Lead');"
+
+29. Write a Statement to add a New Column of Name Address in Employee table of the type varchr with size as 300
+
+30. Write a statement to modify the size of the EmpNAme column in Employee table to 300 which is varchar
+
+31. Which delegate is used by Custom Middleware?
+32. What class represents mapping between Entity class and Database Table?
+33. Whick keyword is used to make sure that the method call must be executed asynchrously?
+34. Does DIctionary uses HAshMap() internally?
+35. DOes DIctionary contains duplicate key entries?
+36. What is the use of AddCors() Service method?
+37. What is the difference between AddCors() and UseCors() methods?
+38. Which class represents HTTP Pipeline in ASP.NET Core?
+39. Can we use ApiController attribute on MVC COntroller class?
+40. What is ModelState?
+41. What is the difference between ViewData and ViewBag?
+42. When shud we use Take() and Skip() in LINQ?
+44. How can we update collection using LINQ?
+45. What is use of RouteData class in ASP.NET COre?
+46. Can we access Controller and Action NAme in Request URL in Code?
+47. When should we use Action FIlters?ow to register Custm Tag He
+48. What are TagHelers?
+49. WHich TagHelper is used for Molde Proerty Binding with HTML Element in RAzor View.
+50. What is Model property in MVC View?
+51. Can we delete record from Table asynchrnously using EF COre?
+52. What is AddDbContext<T>() method does in ASP.NET COre?
+53. WHat is appsettings.json?
+54. WHich interace is used to read appsettings.json file in code?
+55. What is AddScopped() method does in ASP.NET Core?
+56. What is IServiceCollection interface in ASP.NET COre?
+57. What is use of IApplicationBuilder intercace in ASP.NET COre?
+58. What is the name of the base class to create custom Tag Helper?
+59. How to Register Custom Tag Helper?
+60. What is the use of Exception Middleware?   

@@ -8,6 +8,8 @@ namespace MVC_Apps.CustomTagHelpers
     public class ListGenerator : TagHelper
     {
         public IEnumerable<Category> Categories { get; set; }
+
+        public IEnumerable<Object> DataSource { get; set; }
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
             // Custom Tag NAme
