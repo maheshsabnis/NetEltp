@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 using MVC_Apps.Models;
 using MVC_Apps.CustomFilters;
 using MVC_Apps.CustomSessionExtensions;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MVC_Apps.Controllers
 {
@@ -13,6 +14,7 @@ namespace MVC_Apps.Controllers
     /// </summary>
     /// 
     //[LogRequest]
+    [Authorize]
     public class CategoryController : Controller
     {
         IDbRepository<Category, int> catRepo;
@@ -60,7 +62,8 @@ namespace MVC_Apps.Controllers
                 return View("Error");
             }
         }
-
+        // Secure the Action Method
+      //  [Authorize]
         public async Task<IActionResult> Create()
         {
             var category = new Category();

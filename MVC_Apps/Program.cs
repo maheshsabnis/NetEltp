@@ -22,8 +22,15 @@ builder.Services.AddDbContext<SecurityCodi>(options =>
   options.UseSqlServer(builder.Configuration.GetConnectionString("SecurityCodiConnection"));
 });
 
+// THe Service REgistration in Dependency COntainer for Following classes
+// 1. USerManager<IdentityUser>
+// 2. SignInManager<IdentityUser>
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+// AddDefaultIdentity<IdentityUser>() for the USer Based Authentication
+// SignIn.RequireConfirmedAccount = true The Email MUST be Verified
+// AddEntityFrameworkStores<SecurityCodi>();: Read USers Information using
+// EF Core
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
     .AddEntityFrameworkStores<SecurityCodi>();
 
 
@@ -34,9 +41,9 @@ builder.Services.AddScoped<IDbRepository<Product, int>, ProductRepository>();
 builder.Services.AddControllersWithViews(options => 
 {
     // Global REgistration of Action Filter
-    options.Filters.Add(typeof(CustomLogRequestAttribute));
+    ///options.Filters.Add(typeof(CustomLogRequestAttribute));
     // REgister the Exception Filter
-    options.Filters.Add(typeof(AppExceptionAttribute));
+   // options.Filters.Add(typeof(AppExceptionAttribute));
 });
 
 // COnfigure The Session
@@ -89,4 +96,7 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+// Lets Support request processing for RAzor Views
+// (Those are added with the Identity Scaffolded Items)
+app.MapRazorPages();    
 app.Run();
