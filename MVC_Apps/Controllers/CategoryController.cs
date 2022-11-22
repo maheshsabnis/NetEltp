@@ -22,7 +22,7 @@ namespace MVC_Apps.Controllers
         /// Ijecting the Depednency
         /// </summary>
         /// <param name="ctaRepo"></param>
-        /// 
+        ///    
         public CategoryController(IDbRepository<Category, int> catRepo)
         {
             this.catRepo = catRepo;
