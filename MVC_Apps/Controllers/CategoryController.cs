@@ -25,6 +25,7 @@ namespace MVC_Apps.Controllers
         ///    
         public CategoryController(IDbRepository<Category, int> catRepo)
         {
+            //
             this.catRepo = catRepo;
         }
         /// <summary>
