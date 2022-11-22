@@ -4,6 +4,8 @@ using Coditas.EComm.Repositories;
 using Microsoft.EntityFrameworkCore;
 using MVC_Apps.CustomFilters;
 using NuGet.Protocol.Plugins;
+using Microsoft.AspNetCore.Identity;
+using MVC_Apps.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +14,19 @@ builder.Services.AddDbContext<eShoppingCodiContext>(opt =>
 {
     opt.UseSqlServer(builder.Configuration.GetConnectionString("DbConnection"));
 });
+
+// REgister the SecurityCodi in AddDbContext
+
+builder.Services.AddDbContext<SecurityCodi>(options => 
+{
+  options.UseSqlServer(builder.Configuration.GetConnectionString("SecurityCodiConnection"));
+});
+
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<SecurityCodi>();
+
+
 builder.Services.AddScoped<IDbRepository<Category, int>,CategoryRepository>();
 builder.Services.AddScoped<IDbRepository<Product, int>, ProductRepository>();
 // Accept the Request for MVC and API Controllers
@@ -52,6 +67,7 @@ app.UseRouting();
 // USe the Session Middleware SO that, the HTTP Pipeline will use
 // SessionId as Well as REad Data STored in Session
 app.UseSession();
+app.UseAuthentication();;
 
 // USed in Case of Role BAsed Security
 app.UseAuthorization();
