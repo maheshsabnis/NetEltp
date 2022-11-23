@@ -27,11 +27,29 @@ builder.Services.AddDbContext<SecurityCodi>(options =>
 // 2. SignInManager<IdentityUser>
 
 // AddDefaultIdentity<IdentityUser>() for the USer Based Authentication
+// THis also Register the Servce for Executing The Razor Views
+// using AddRazorPages() Service method INternaly
 // SignIn.RequireConfirmedAccount = true The Email MUST be Verified
 // AddEntityFrameworkStores<SecurityCodi>();: Read USers Information using
 // EF Core
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
-    .AddEntityFrameworkStores<SecurityCodi>();
+//builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
+//    .AddEntityFrameworkStores<SecurityCodi>();
+
+
+
+
+// THe Service REgistration in Dependency COntainer for Following classes
+// 1. USerManager<IdentityUser>
+// 2. SignInManager<IdentityUser>
+// 3. RoleManager<Identiktyole>
+
+// AddDefaultIdentity<IdentityUser>() for the USer Based Authentication
+// SignIn.RequireConfirmedAccount = true The Email MUST be Verified
+// AddEntityFrameworkStores<SecurityCodi>();: Read USers Information using
+// EF Core
+builder.Services.AddIdentity<IdentityUser,IdentityRole>(options => options.SignIn.RequireConfirmedAccount = false)
+    .AddEntityFrameworkStores<SecurityCodi>()
+    .AddDefaultUI(); // Manage the DEfault Rediret
 
 
 builder.Services.AddScoped<IDbRepository<Category, int>,CategoryRepository>();
@@ -45,6 +63,11 @@ builder.Services.AddControllersWithViews(options =>
     // REgister the Exception Filter
    // options.Filters.Add(typeof(AppExceptionAttribute));
 });
+
+// Register a Service for executing RAzor Views used for Identity
+// this is used when AddIdentity<TUser,TRole>() method is used for
+// Security
+builder.Services.AddRazorPages();
 
 // COnfigure The Session
 builder.Services.AddDistributedMemoryCache();
@@ -66,6 +89,8 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 // MIddleware used to read/write Files on Server for Upload and Download
 // By default this is used to read contents of 'wwwroot' folder
+// THis is Also used for Making Sure that the NAvidation to IDentity Pages
+// is Managed
 app.UseStaticFiles();
 // CReate, LOad, and Exeute ROute Table for
 // MVC Controller ROuting to execute 
@@ -98,5 +123,6 @@ app.MapControllerRoute(
 
 // Lets Support request processing for RAzor Views
 // (Those are added with the Identity Scaffolded Items)
-app.MapRazorPages();    
+app.MapRazorPages(); 
+
 app.Run();

@@ -1,0 +1,23 @@
+﻿@model Microsoft.AspNetCore.Identity.IdentityRole
+
+<h1>Create New Role</h1>
+
+<form asp-action="Create">
+    <div class="container">
+        <div class="form-group">
+            <label>Name</label>
+            <input asp-for="@Model.Name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Save" class="btn btn-primary"/>
+            <div class="container alert alert-danger">
+                <strong>
+                    @ViewBag.Message
+                </strong>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<a asp-action="Index">Go Back To List of Roles</a>

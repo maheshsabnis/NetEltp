@@ -14,7 +14,7 @@ namespace MVC_Apps.Controllers
     /// </summary>
     /// 
     //[LogRequest]
-    [Authorize]
+   // [Authorize]
     public class CategoryController : Controller
     {
         IDbRepository<Category, int> catRepo;
@@ -33,7 +33,8 @@ namespace MVC_Apps.Controllers
         /// </summary>
         /// <returns></returns>
         /// 
-       // [LogRequest]
+        // [LogRequest]
+        [Authorize(Roles ="Manager,Clerk,Operator")]
         public async Task<IActionResult> Index()
         {
             try
@@ -64,7 +65,8 @@ namespace MVC_Apps.Controllers
             }
         }
         // Secure the Action Method
-      //  [Authorize]
+        //  [Authorize]
+        [Authorize(Roles = "Manager, Clerk")]
         public async Task<IActionResult> Create()
         {
             var category = new Category();
@@ -107,6 +109,7 @@ namespace MVC_Apps.Controllers
             //}
         }
 
+        [Authorize(Roles = "Manager")]
         public async Task<IActionResult> Edit(int id)
         { 
             var record = await catRepo.GetAsync(id);
