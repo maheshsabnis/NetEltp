@@ -6,6 +6,7 @@ using MVC_Apps.CustomFilters;
 using NuGet.Protocol.Plugins;
 using Microsoft.AspNetCore.Identity;
 using MVC_Apps.Data;
+using MVC_Apps.GlobalApps;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -50,6 +51,31 @@ builder.Services.AddDbContext<SecurityCodi>(options =>
 builder.Services.AddIdentity<IdentityUser,IdentityRole>(options => options.SignIn.RequireConfirmedAccount = false)
     .AddEntityFrameworkStores<SecurityCodi>()
     .AddDefaultUI(); // Manage the DEfault Rediret
+
+
+// Define an Authorization Service to Add Policy for ROles to access the 
+// application
+//                              AuthorizationOptions
+builder.Services.AddAuthorization(options => 
+{
+                                    // AuthorizationPolicyBuider
+    options.AddPolicy("ReadPolicy", policy => 
+    {
+        policy.RequireRole("Administrator", "Manager", "Clerk", "Operator");
+    });
+    options.AddPolicy("CreatePolicy", policy =>
+    {
+        policy.RequireRole("Administrator", "Manager", "Clerk");
+    });
+    options.AddPolicy("EditPolicy", policy =>
+    {
+        policy.RequireRole("Administrator", "Manager");
+    });
+    options.AddPolicy("DeletePolicy", policy =>
+    {
+        policy.RequireRole("Administrator");
+    });
+});
 
 
 builder.Services.AddScoped<IDbRepository<Category, int>,CategoryRepository>();
@@ -123,6 +149,10 @@ app.MapControllerRoute(
 
 // Lets Support request processing for RAzor Views
 // (Those are added with the Identity Scaffolded Items)
-app.MapRazorPages(); 
+app.MapRazorPages();
+
+// Call the code for Default Admin Role and User
+IServiceProvider serviceProvider = builder.Services.BuildServiceProvider();
+await GlobalOps.CreateApplicationAdministrator(serviceProvider);
 
 app.Run();

@@ -34,7 +34,8 @@ namespace MVC_Apps.Controllers
         /// <returns></returns>
         /// 
         // [LogRequest]
-        [Authorize(Roles ="Manager,Clerk,Operator")]
+        // [Authorize(Roles ="Manager,Clerk,Operator")]
+        [Authorize(Policy ="ReadPolicy")]
         public async Task<IActionResult> Index()
         {
             try
@@ -66,7 +67,8 @@ namespace MVC_Apps.Controllers
         }
         // Secure the Action Method
         //  [Authorize]
-        [Authorize(Roles = "Manager, Clerk")]
+        // [Authorize(Roles = "Manager, Clerk")]
+        [Authorize(Policy = "CreatePolicy")]
         public async Task<IActionResult> Create()
         {
             var category = new Category();
@@ -109,7 +111,8 @@ namespace MVC_Apps.Controllers
             //}
         }
 
-        [Authorize(Roles = "Manager")]
+        //[Authorize(Roles = "Manager")]
+        [Authorize(Policy = "EditPolicy")]
         public async Task<IActionResult> Edit(int id)
         { 
             var record = await catRepo.GetAsync(id);
@@ -147,6 +150,11 @@ namespace MVC_Apps.Controllers
             // Redirect to the ProductController and its Index Method
             return RedirectToAction("Index", "Product");
 
+        }
+        [Authorize(Policy = "DeletePolicy")]
+        public IActionResult Delete(int id)
+        {
+            return RedirectToAction("Index");
         }
 
     }

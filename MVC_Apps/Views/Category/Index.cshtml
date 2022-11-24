@@ -43,6 +43,7 @@
                     CategoryController
                 -->
                 @Html.ActionLink("Edit", "Edit", new {  id=item.CategoryId}) |
+                    @Html.ActionLink("Delete", "Delete", new {  id=item.CategoryId}) |
                     @Html.ActionLink("ShowDetails", "ShowDetails", new { id=item.CategoryId }) 
             </td>
         </tr>
