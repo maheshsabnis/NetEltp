@@ -1,5 +1,6 @@
 ﻿using APIApps.Models;
 using APIApps.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -23,8 +24,10 @@ namespace APIApps.Controllers
     /// 6. Generating Responses
     ///     - Ok(), NotFound(), Create(), BadRequest(), NoContent(), etc.
     /// </summary>
+    /// 
     [Route("api/[controller]")]
-   [ApiController]
+    [Authorize]
+    [ApiController]
     public class CategoryController : ControllerBase
     {
         IDbAccessService<Category, int> catService;

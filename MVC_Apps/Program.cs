@@ -125,10 +125,10 @@ app.UseRouting();
 // USe the Session Middleware SO that, the HTTP Pipeline will use
 // SessionId as Well as REad Data STored in Session
 app.UseSession();
-app.UseAuthentication();;
+app.UseAuthentication();
 
 // USed in Case of Role BAsed Security
-app.UseAuthorization();
+=
 // Map the Incomming HTTP Request URL to
 // COrresponding COntroller and the Action Method from the Contrller
 // {controller}/{action}/{id?}
