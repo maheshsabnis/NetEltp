@@ -17,7 +17,7 @@ foreach (var item in cats)
 
 Console.WriteLine("POSTA");
 var catNew = new Category()
-{
+{ 
      CategoryId=1010, CategoryName="Shose", BasePrice=4444
 };
 
