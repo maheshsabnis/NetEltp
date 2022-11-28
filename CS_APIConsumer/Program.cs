@@ -18,7 +18,7 @@ foreach (var item in cats)
 Console.WriteLine("POSTA");
 var catNew = new Category()
 { 
-     CategoryId=1010, CategoryName="Shose", BasePrice=4444
+     CategoryId=1010, CategoryName="Shose", BasePrice=444433
 };
 
 var response = await client.PostAsJsonAsync<Category>("https://localhost:7083/api/Category", catNew);
