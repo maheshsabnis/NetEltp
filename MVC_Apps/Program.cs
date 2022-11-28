@@ -127,8 +127,8 @@ app.UseRouting();
 app.UseSession();
 app.UseAuthentication();
 
-// USed in Case of Role BAsed Security
-=
+// USed in Case of Role BAsed Securit
+app.UseAuthorization();
 // Map the Incomming HTTP Request URL to
 // COrresponding COntroller and the Action Method from the Contrller
 // {controller}/{action}/{id?}

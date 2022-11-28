@@ -1,0 +1,65 @@
+﻿
+
+<script>
+    window.onload = function(){
+
+        document.getElementById('btnList').addEventListener('click', function(){
+            loadView('@Url.Action("List","SPA")');
+        },false);
+
+        document.getElementById('btnCreate').addEventListener('click', function(){
+            loadView('@Url.Action("Create","SPA")');
+        },false);
+
+         document.getElementById('btnClear').addEventListener('click', function(){
+             document.getElementById('dvView').innerHTML = '';
+        },false);
+        // THis method willcall an action Method from Controller
+        // and then will receive its HTML and sho it on this Page
+        function loadView(url){
+            alert(url);
+           var http = new XMLHttpRequest();
+
+            // subscribe to onload event if the call is successful
+            http.onload = function(evt){
+                console.log(http.responseText);
+                 document.getElementById('dvView').innerHTML = http.responseText;
+
+            };
+            // If error Occur
+            http.onerror = function(err){
+                console.log(`Error Occurred ${err}`);
+            }
+
+            // OPen the Call to REST API
+            http.open("GET", url);
+            // send the Request
+            http.send();
+        }
+
+        document.getElementById('txt').addEventListener('change',function(){
+             console.log(this.value);
+        },false);
+    };
+</script>
+
+<h1>The ASP.NET Core 6 MVC-SPA</h1>
+
+<input type="text" id="txt" placeholder="ENter Data and Press Tab"/>
+<table>
+    <tbody>
+        <tr>
+            <td>
+                <input type="button" id="btnList" value="Load List" class="btn btn-primary"/>
+            </td>
+            <td>
+                <input type="button" id="btnCreate" value="Load Create" class="btn btn-success" />
+            </td>
+            <td>
+                <input type="button" id="btnClear" value="Clear UI" class="btn btn-danger" />
+            </td>
+        </tr>
+    </tbody>
+</table>
+<hr/>
+<div id="dvView"></div>
