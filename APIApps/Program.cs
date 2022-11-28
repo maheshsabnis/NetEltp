@@ -57,7 +57,8 @@ builder.Services.AddMemoryCache();
 
 // USe the ASP.NET Core Identity for UserManager<IdentityUser> and 
 // SIgnInManager<IdentityRole>()
-builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<SecurityCodiDbContext>();
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+    .AddEntityFrameworkStores<SecurityCodiDbContext>();
 
 
 builder.Services.AddScoped<SecurityService>();

@@ -86,6 +86,7 @@ namespace APIApps.Services
                 // CReate Token based on Description
                 var jwToken = jwtHandler.CreateJwtSecurityToken(securityTokenDescription);
                 // Write Token in Response
+                secureResponse.UserName = user.Email;
                 secureResponse.Token = jwtHandler.WriteToken(jwToken);
 
             }

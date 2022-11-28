@@ -20,7 +20,9 @@ var catNew = new Category()
 {
      CategoryId=1010, CategoryName="Shose", BasePrice=4444
 };
+
 var response = await client.PostAsJsonAsync<Category>("https://localhost:7083/api/Category", catNew);
+
 // resonse.Content, will return HttpContext Object
 // response.Content.ReadAsStringAsync(), will provde actual Details in Response Message
 Console.WriteLine(await response.Content.ReadAsStringAsync());

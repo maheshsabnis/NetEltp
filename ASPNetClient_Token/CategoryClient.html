@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        window.onload = function () {
+
+            document.getElementById('btnregnewuser').addEventListener('click', function () {
+                regUser();
+            }, false);
+
+            document.getElementById('btnloginuser').addEventListener('click', function () {
+                loginUser();
+            }, false);
+
+            document.getElementById('btngetcats').addEventListener('click', function () {
+                getCats();
+            }, false);
+
+            function regUser() {
+                var newUser = {
+                    Email: document.getElementById("txtnewuser").value,
+                    Password: document.getElementById("txtnewpwd").value,
+                    ConfirmPassword: document.getElementById("txtnewconfpwd").value
+                };
+                alert('New USer ' + JSON.stringify(newUser));
+
+                var http = new XMLHttpRequest();
+
+                // subscribe to onload event if the call is successful
+                http.onload = function (evt) {
+                    alert('The USer is register successfully');
+                };
+                // If error Occur
+                http.onerror = function (err) {
+                    console.log(`Error Occurred ${err}`);
+                }
+
+                // OPen the Call to REST API
+                http.open("POST", "https://localhost:7083/api/Auth/register");
+                // Set the Request Header to Cotain Data in it
+                http.setRequestHeader('Content-Type', 'application/json');
+                // send the Request
+                http.send(JSON.stringify(newUser));
+
+            }
+
+            function loginUser() {
+                var responseObject = {
+                    UserName: '',
+                    Token:''
+                };
+                var authUser = {
+                    Email: document.getElementById("txtuser").value,
+                    Password: document.getElementById("txtpwd").value
+                };
+                alert('LOgin USer ' + JSON.stringify(authUser));
+
+                var http = new XMLHttpRequest();
+
+                // subscribe to onload event if the call is successful
+                http.onload = function (evt) {
+                    alert('The USer is loggedin successfully');
+                    // Get the Response
+                    alert('The Response' + http.responseText);
+                    // TAke the ResponseText and Save it in JSON Object
+                    var resp = JSON.parse(http.responseText);
+
+                    console.log('The Text to JSON ' + JSON.stringify(resp));
+
+                    responseObject.UserName = http.response.UserName;
+                    responseObject.Token = http.response.Token;
+
+                    console.log(JSON.stringify(responseObject));
+
+                    // Save the token in SessionStorage of the Browser
+                    sessionStorage.setItem("token", resp.Token);
+                };
+                // If error Occur
+                http.onerror = function (err) {
+                    console.log(`Error Occurred ${err}`);
+                }
+
+                // OPen the Call to REST API
+                http.open("POST", "https://localhost:7083/api/Auth/login");
+                // Set the Request Header to Cotain Data in it
+                http.setRequestHeader('Content-Type', 'application/json');
+                // send the Request
+                http.send(JSON.stringify(authUser));
+            }
+
+            function getCats() {
+                // REad the Token from the session storage
+                var token = sessionStorage.getItem("token");
+                if (token === undefined)
+                    alert('No Token No AUthentication');
+                else {
+                    // make an ajax call
+
+
+                    var http = new XMLHttpRequest();
+
+                    // subscribe to onload event if the call is successful
+                    http.onload = function (evt) {
+                        alert('The USer is Authorized successfully');
+                        // Get the Response
+                        alert(`Received Categories ${http.response}`);
+
+                        document.getElementById('dvcats').innerHTML = JSON.stringify(http.response);
+                        
+                    };
+                    // If error Occur
+                    http.onerror = function (err) {
+                        console.log(`Error Occurred ${err}`);
+                    }
+
+                    // OPen the Call to REST API
+                    http.open("GET", "https://localhost:7083/api/Category");
+                    // Set the Request Header to Cotain Data in it
+                    http.setRequestHeader('Authorization', `Bearer ${token}`);
+                    // send the Request
+                    http.send();
+                }
+
+            }
+
+
+        };
+    </script>
+</head>
+<body>
+    <h1>The Client of Secure API and Manage Authorization Using Token</h1>
+    <table style="border:double">
+        <tr>
+            <td>
+                <div>
+                    <h3>Register User</h3>
+                    <label>Email</label>
+                    <input type="text" id="txtnewuser" />
+                    <br />
+                    <label>Password</label>
+                    <input type="text" id="txtnewpwd" />
+                    <br />
+                    <label>Confirm Password</label>
+                    <input type="text" id="txtnewconfpwd" />
+                    <br/>
+                    <input type="button" id="btnregnewuser" value="Register User"/>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <h3>Login</h3>
+                    <label>Email</label>
+                    <input type="text" id="txtuser" />
+                    <br />
+                    <label>Password</label>
+                    <input type="text" id="txtpwd" />
+                    <br />
+                    <input type="button" id="btnloginuser" value="Login User" />
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button"  id="btngetcats" value="Get Categories" />
+                <br/>
+                <div id="dvcats"></div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
