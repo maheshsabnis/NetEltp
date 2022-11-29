@@ -118,6 +118,7 @@ app.UseHttpsRedirection();
 // THis is Also used for Making Sure that the NAvidation to IDentity Pages
 // is Managed
 app.UseStaticFiles();
+ 
 // CReate, LOad, and Exeute ROute Table for
 // MVC Controller ROuting to execute 
 // an Action Mathod of a COntrller class
