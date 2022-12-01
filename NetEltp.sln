@@ -232,9 +232,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API_Minimal", "API_Minimal\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BAckgroundServiceApps", "BAckgroundServiceApps", "{6FF8862C-0ACC-4F08-AA7F-8DE767D166D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API_Sender", "API_Sender\API_Sender.csproj", "{E208A423-A9B0-4A13-9A43-B5DD5DCCE1F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API_Sender", "API_Sender\API_Sender.csproj", "{E208A423-A9B0-4A13-9A43-B5DD5DCCE1F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API_Receiver", "API_Receiver\API_Receiver.csproj", "{50CE0ABE-E117-4214-89E7-92C28D7D821B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API_Receiver", "API_Receiver\API_Receiver.csproj", "{50CE0ABE-E117-4214-89E7-92C28D7D821B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC_AppFrwk", "MVC_AppFrwk\MVC_AppFrwk.csproj", "{9FC88E99-4B0A-4356-906A-98FF4BCA0337}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -578,6 +580,10 @@ Global
 		{50CE0ABE-E117-4214-89E7-92C28D7D821B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50CE0ABE-E117-4214-89E7-92C28D7D821B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50CE0ABE-E117-4214-89E7-92C28D7D821B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FC88E99-4B0A-4356-906A-98FF4BCA0337}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FC88E99-4B0A-4356-906A-98FF4BCA0337}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FC88E99-4B0A-4356-906A-98FF4BCA0337}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FC88E99-4B0A-4356-906A-98FF4BCA0337}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
