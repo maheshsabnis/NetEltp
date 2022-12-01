@@ -111,8 +111,10 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+// the Default Exception Page
+app.UseDeveloperExceptionPage();    
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 // MIddleware used to read/write Files on Server for Upload and Download
 // By default this is used to read contents of 'wwwroot' folder
 // THis is Also used for Making Sure that the NAvidation to IDentity Pages
